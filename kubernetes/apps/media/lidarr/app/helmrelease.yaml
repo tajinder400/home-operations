@@ -47,9 +47,9 @@ spec:
               LIDARR__AUTH__REQUIRED: DisabledForLocalAddresses
               LIDARR__APP__THEME: dark
               TZ: Europe/London
-            envFrom:
-              - secretRef:
-                  name: lidarr
+            #envFrom:
+            #  - secretRef:
+            #      name: lidarr
             securityContext:
               allowPrivilegeEscalation: false
               readOnlyRootFilesystem: true
