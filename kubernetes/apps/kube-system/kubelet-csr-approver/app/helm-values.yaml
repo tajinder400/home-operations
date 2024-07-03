@@ -1,0 +1,3 @@
+---
+providerRegex: ^(pneuma|logos|ontos)$
+bypassDnsResolution: true
