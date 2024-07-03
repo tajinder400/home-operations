@@ -103,7 +103,7 @@ spec:
       media:
         type: nfs
         server: 10.0.10.18
-        path: /mnt/mechonis/data
+        path: /mnt/mechonis/data/media
         globalMounts:
           - path: /data
       downloads:
