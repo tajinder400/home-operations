@@ -101,7 +101,8 @@ spec:
         accessMode: ReadWriteOnce
         size: 500M
         retain: true
-        globalMounts: []
+        globalMounts:
+          - path: /config
       downloads:
         type: nfs
         server: 10.0.10.18
