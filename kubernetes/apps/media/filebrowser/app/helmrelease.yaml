@@ -102,6 +102,6 @@ spec:
         globalMounts:
           - path: /data/appdata_backup
       prowlarr:
-        existingClaim: sonarr-config
+        existingClaim: prowlarr-config
         globalMounts:
           - path: "/data/prowlarr"
