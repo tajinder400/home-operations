@@ -107,6 +107,22 @@ spec:
         globalMounts:
           - path: /appdata_backup
       sonarr:
-        existingClaim: pvc-3d91ea78-3964-4f74-b5cc-19fcea182664
+        existingClaim: sonarr-config
         globalMounts:
           - path: "/sonarr"
+      radarr:
+        existingClaim: radarr-config
+        globalMounts:
+          - path: "/radarr"
+      lidarr:
+        existingClaim: lidarr-config
+        globalMounts:
+          - path: "/lidarr"
+      bazarr:
+        existingClaim: bazarr-config
+        globalMounts:
+          - path: "/bazarr"
+      overseerr:
+        existingClaim: overseerr-config
+        globalMounts:
+          - path: "/overseerr"
