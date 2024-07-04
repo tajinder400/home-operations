@@ -35,7 +35,7 @@ spec:
             env:
               TZ: America/New_York
               FB_DATABASE: /config/filebrowser.db
-              FB_ROOT: /eros
+              FB_ROOT: /data
               FB_LOG: stdout
               FB_NOAUTH: true
             probes:
@@ -95,30 +95,31 @@ spec:
         accessMode: ReadWriteOnce
         size: 5Gi
         retain: false
-        globalMounts: []
+        globalMounts:
+          - path: "/data"
       data:
         type: nfs
         server: 10.0.10.18
         path: /mnt/bionis/appdata_backup
         globalMounts:
-          - path: /appdata_backup
+          - path: /data/appdata_backup
       sonarr:
         existingClaim: sonarr-config
         globalMounts:
-          - path: "/sonarr"
+          - path: "/data/sonarr"
       radarr:
         existingClaim: radarr-config
         globalMounts:
-          - path: "/radarr"
+          - path: "/data/radarr"
       lidarr:
         existingClaim: lidarr-config
         globalMounts:
-          - path: "/lidarr"
+          - path: "/data/lidarr"
       bazarr:
         existingClaim: bazarr-config
         globalMounts:
-          - path: "/bazarr"
+          - path: "/data/bazarr"
       overseerr:
         existingClaim: overseerr-config
         globalMounts:
-          - path: "/overseerr"
+          - path: "/data/overseerr"
