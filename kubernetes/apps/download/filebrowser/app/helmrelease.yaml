@@ -104,4 +104,4 @@ spec:
       sabnzbd:
         existingClaim: sabnzbd-config
         globalMounts:
-          - path: "/data/vaultwarden"
+          - path: "/data/sabnzbd"
