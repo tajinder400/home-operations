@@ -54,7 +54,7 @@ spec:
             securityContext:
               allowPrivilegeEscalation: false
               readOnlyRootFilesystem: true
-              capabilities: { drop: ["ALL"] }
+
             resources:
               requests:
                 cpu: 100m
@@ -94,8 +94,7 @@ spec:
         accessMode: ReadWriteOnce
         size: 5Gi
         retain: false
-        globalMounts:
-          - path: "/data"
+        globalMounts: []
       data:
         type: nfs
         server: 10.0.10.18
