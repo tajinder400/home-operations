@@ -101,7 +101,7 @@ spec:
         path: /mnt/bionis/appdata_backup
         globalMounts:
           - path: /data/appdata_backup
-      prowlarr:
-        existingClaim: prowlarr-config
+      vaultwarden:
+        existingClaim: vaultwarden-config
         globalMounts:
-          - path: "/data/prowlarr"
+          - path: "/data/vaultwarden"
