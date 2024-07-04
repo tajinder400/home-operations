@@ -103,6 +103,8 @@ spec:
         retain: true
         globalMounts: []
       downloads:
-        type: emptyDir
+        type: nfs
+        server: 10.0.10.18
+        path: /mnt/bionis/usenet
         globalMounts:
           - path: /usenet
