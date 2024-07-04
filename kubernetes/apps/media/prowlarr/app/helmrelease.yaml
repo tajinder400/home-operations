@@ -69,8 +69,7 @@ spec:
               readiness: *probes
             resources:
               requests:
-                cpu: 200m
-                memory: 800Mi
+                cpu: 10m
               limits:
                 memory: 1Gi
     service:
@@ -100,3 +99,5 @@ spec:
         size: 500M
         retain: true
         globalMounts: []
+      tmp:
+        type: emptyDir

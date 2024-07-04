@@ -66,8 +66,7 @@ spec:
               readiness: *probes
             resources:
               requests:
-                cpu: 200m
-                memory: 800Mi
+                cpu: 10m
               limits:
                 memory: 1Gi
     service:
@@ -103,3 +102,5 @@ spec:
         path: /mnt/mechonis/data
         globalMounts:
           - path: /data
+      tmp:
+         type: emptyDir

@@ -64,10 +64,9 @@ spec:
               readiness: *probes
             resources:
               requests:
-                cpu: 200m
-                memory: 800Mi
+                cpu: 10m
               limits:
-                memory: 1Gi
+                memory: 2Gi
     service:
       app:
         controller: overseerr
