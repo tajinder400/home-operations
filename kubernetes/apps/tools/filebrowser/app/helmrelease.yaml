@@ -107,6 +107,6 @@ spec:
         globalMounts:
           - path: /appdata_backup
       sonarr:
-        existingClaim: pvc-3d91ea78-3964-4f74-b5cc-19fcea182664
+        existingClaim: media/pvc-3d91ea78-3964-4f74-b5cc-19fcea182664
         globalMounts:
           - path: "/sonarr"
