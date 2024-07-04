@@ -108,3 +108,5 @@ spec:
         path: /mnt/bionis/usenet
         globalMounts:
           - path: /usenet
+      tmp:
+        type: emptyDir
