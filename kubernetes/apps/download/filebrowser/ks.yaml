@@ -6,11 +6,11 @@ metadata:
   name: &app filebrowser
   namespace: flux-system
 spec:
-  targetNamespace: security
+  targetNamespace: download
   commonMetadata:
     labels:
       app.kubernetes.io/name: *app
-  path: ./kubernetes/apps/security/filebrowser/app
+  path: ./kubernetes/apps/download/filebrowser/app
   sourceRef:
     kind: GitRepository
     name: home-kubernetes
