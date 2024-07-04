@@ -86,6 +86,7 @@ spec:
         className: external
         annotations:
           external-dns.alpha.kubernetes.io/target: external.${SECRET_DOMAIN}
+          nginx.ingress.kubernetes.io/custom-http-errors: 403,404,500,501,502,503
         hosts:
           - host: *host
             paths:
@@ -99,7 +100,7 @@ spec:
         type: persistentVolumeClaim
         storageClass: longhorn-snapshot
         accessMode: ReadWriteOnce
-        size: 5Gi
+        size: 100M
         retain: true
         globalMounts:
           - path: /data
