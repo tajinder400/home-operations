@@ -41,8 +41,9 @@ spec:
               tag: 1.40.3.8555-fef15d30c@sha256:82353ee29f0ba3e782aad43bb2be7c1e04b071b9fc83d6c551ef853793f48ab4
             env:
               TZ: Europe/London
-              PLEX_ADVERTISE_URL: https://plex.wabbit.life:443,http://10.0.10.254:32400
+              PLEX_ADVERTISE_URL: https://plex.wabbit.life:443,http://10.0.60.15:32400
               #PLEX_NO_AUTH_NETWORKS: 192.168.1.0/24
+              ALLOWED_NETWORKS: "10.0.10.0/24"
             probes:
               liveness: &probes
                 enabled: true
@@ -87,7 +88,7 @@ spec:
         controller: plex
         type: LoadBalancer
         annotations:
-          io.cilium/lb-ipam-ips: 10.0.10.254
+          io.cilium/lb-ipam-ips: 10.0.60.15
         ports:
           http:
             port: 32400
