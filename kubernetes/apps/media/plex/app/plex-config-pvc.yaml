@@ -9,4 +9,3 @@ spec:
     requests:
       storage: 50Gi
   storageClassName: longhorn-snapshot
-  persistentVolumeReclaimPolicy: Retain
