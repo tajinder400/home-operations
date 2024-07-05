@@ -102,20 +102,10 @@ spec:
         globalMounts:
           - path: /data/appdata_backup
       plex-config:
-        enabled: true
-        type: persistentVolumeClaim
-        storageClass: longhorn-snapshot
-        accessMode: ReadWriteOnce
-        size: 15Gi
-        retain: false
+        existingClaim: plex-config
         globalMounts:
           - path: "/data/plex-config"
       plex-cache:
-        enabled: true
-        type: persistentVolumeClaim
-        storageClass: longhorn-snapshot
-        accessMode: ReadWriteOnce
-        size: 50Gi
-        retain: false
+        existingClaim: plex-cache
         globalMounts:
           - path: "/data/plex-cache"
