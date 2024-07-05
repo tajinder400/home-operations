@@ -1,7 +1,7 @@
 ---
 # yaml-language-server: $schema=https://json.schemastore.org/kustomization
 apiVersion: kustomize.config.k8s.io/v1beta1
-kind: Kustomization
+kind: Kustomization1
 resources:
   # Pre Flux-Kustomizations
   - ./namespace.yaml
@@ -13,4 +13,4 @@ resources:
   - ./lidarr/ks.yaml
   - ./overseerr/ks.yaml
   #- ./filebrowser/ks.yaml
-  #- ./plex/ks.yaml
+  - ./plex/ks.yaml
