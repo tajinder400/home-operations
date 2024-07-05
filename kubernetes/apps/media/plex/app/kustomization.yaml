@@ -5,8 +5,6 @@ kind: Kustomization
 resources:
   #- ./pvc.yaml
   - ./helmrelease.yaml
-  - ./plex-config-pvc.yaml
-  - ./plex-cache-pvc.yaml
   #- ../../../../templates/gatus/external
   #- ../../../../templates/volsync
 
