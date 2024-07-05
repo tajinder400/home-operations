@@ -119,7 +119,7 @@ spec:
       cache:
         enabled: true
         type: persistentVolumeClaim
-        storageClass: longhorn-snapshot
+        storageClass: longhorn-cache
         accessMode: ReadWriteOnce
         size: 50Gi
         retain: true
