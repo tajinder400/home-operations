@@ -155,10 +155,3 @@ spec:
         globalMounts:
           - path: /music
             readOnly: true
-      backups:
-        type: nfs
-        server: 10.0.10.18
-        path: /mnt/bionis/appdata_backup
-        globalMounts:
-          - path: /mnt/appdata_backup
-
