@@ -22,7 +22,7 @@ metadata:
 spec:
   ingressClassName: internal
   rules:
-    - host: ${SECRET_DOMAIN}
+    - host: m.${SECRET_DOMAIN}
       http:
         paths:
           - backend:
@@ -46,7 +46,7 @@ spec:
                   number: 80
             path: /.well-known/matrix
             pathType: Prefix
-    - host: matrix.${SECRET_DOMAIN}
+    - host: synapse.${SECRET_DOMAIN}
       http:
         paths:
           - backend:
@@ -140,8 +140,8 @@ spec:
                   number: 8008
             path: /_synapse
             pathType: Prefix
-  tls:
-    - hosts:
-        - ${SECRET_DOMAIN}
-        - matrix.${SECRET_DOMAIN}
-      secretName: matrix-tls
+  #tls:
+  #  - hosts:
+  #      - ${SECRET_DOMAIN}
+  #      - matrix.${SECRET_DOMAIN}
+  #    secretName: matrix-tls

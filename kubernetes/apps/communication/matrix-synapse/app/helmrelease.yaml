@@ -20,8 +20,8 @@ spec:
     image:
       repository: ghcr.io/element-hq/synapse
       tag: v1.110.0
-    serverName: ${SECRET_DOMAIN}
-    publicServerName: matrix.${SECRET_DOMAIN}
+    serverName: m.${SECRET_DOMAIN}
+    publicServerName: synapse.${SECRET_DOMAIN}
     wellknown:
       enabled: true
       image:
@@ -120,18 +120,18 @@ spec:
         external-dns-cf/is-dns-public: "true"
         external-dns.target/enabled: "true"
         external-dns.alpha.kubernetes.io/cloudflare-proxied: "true"
-        external-dns.alpha.kubernetes.io/target: ${SECRET_DOMAIN}
-      tls:
-        - secretName: matrix-tls
-          hosts:
-            - ${SECRET_DOMAIN}
-            - matrix.${SECRET_DOMAIN}
+        external-dns.alpha.kubernetes.io/target: m.${SECRET_DOMAIN}
+      #tls:
+      #  - secretName: matrix-tls
+      #    hosts:
+      #      - ${SECRET_DOMAIN}
+      #      - matrix.${SECRET_DOMAIN}
 
     postgresql:
       enabled: false
 
     externalPostgresql:
-      host: postgres16-lb.database.svc.cluster.local
+      host: postgres16-rw.database.svc.cluster.local
       port: 5432
       username: synapse
       password: ${SECRET_MATRIX_POSTGRESQL_PASSWORD}
