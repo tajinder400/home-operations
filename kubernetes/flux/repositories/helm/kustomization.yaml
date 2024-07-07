@@ -22,3 +22,4 @@ resources:
   - ./node-feature-discovery.yaml
   - ./cloudnative-pg.yaml
   - ./ananace-charts.yaml
+  - ./bitnami.yaml
