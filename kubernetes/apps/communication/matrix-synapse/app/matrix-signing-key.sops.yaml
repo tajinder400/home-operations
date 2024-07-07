@@ -1,0 +1,27 @@
+apiVersion: v1
+kind: Secret
+metadata:
+    name: matrix-synapse-signingkey
+    namespace: communication
+stringData:
+    signing.key: ENC[AES256_GCM,data:q8CvGKKJCt4y7R/4M1qcllWLzsurXzftOBOfnd2V25CPM8EQj1YJhkigfsOEZjKf8vA=,iv:nGcrNSiP12Uy/zUdQ5gPQGzkoIScsz86FFYCEht1p3k=,tag:sPAaPCzrzdsWNUoGxHnbQw==,type:str]
+sops:
+    kms: []
+    gcp_kms: []
+    azure_kv: []
+    hc_vault: []
+    age:
+        - recipient: age1x9asfknr3janmqkcm9nlcg5hzm59wtdhs6u9lhweaddagnvg9amq22505d
+          enc: |
+            -----BEGIN AGE ENCRYPTED FILE-----
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBvN1o2UzdDb1pTR0tQcjB0
+            ZThzWFFIUDJmN2tsR1RKM25yeTBXRjBJeEVrCnpXZFFBL2FYVExhcktCdC92ekpQ
+            d1dEZTBYa3R0eUdURFdiczN6V2IvWVkKLS0tIENVWGo0eS8wRjBSZHo0NVVkMlAz
+            Y3VMSHpZVm5mR3Q4UHZtbGNmVjFXZTAKJICITSBBgTm0UteoEw8Qn6YginbQAWDg
+            /NBU07hvnHF6wtuaY0arZ/EnkxEnL202DuMipmQbA2t+pASjZbUYPw==
+            -----END AGE ENCRYPTED FILE-----
+    lastmodified: "2024-07-07T14:19:18Z"
+    mac: ENC[AES256_GCM,data:/ET/qmKVSjh96qHa7cmkeWA6dsQ9mzBegSZB5bvcvQqbQUQnJK+K/hVHi7EvFeqsRFemxOhqmCn4aYeCPI/WVY8ZqiJ970fv/6eVfMdzs9By7oE6WjPrYsBHEhBCoOdqhBzwn4uEpdFrWT/+ogArSBTHmhJLkSt9YqZ22s5cbmE=,iv:gZ5U90uFJHF6lcCKZ2dIWPxyTWl6BDGcZUfOmzwxm3w=,tag:wD4+O5lTcJoj8bI1MJvsnw==,type:str]
+    pgp: []
+    encrypted_regex: ^(data|stringData)$
+    version: 3.8.1
