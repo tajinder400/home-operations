@@ -140,8 +140,8 @@ spec:
                   number: 8008
             path: /_synapse
             pathType: Prefix
-  tls:
-    - hosts:
-        - m.${SECRET_DOMAIN}
-        - synapse.${SECRET_DOMAIN}
+  #tls:
+  #  - hosts:
+  #      - m.${SECRET_DOMAIN}
+  #      - synapse.${SECRET_DOMAIN}
   #    secretName: wabbit-life-production
