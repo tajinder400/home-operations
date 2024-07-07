@@ -69,10 +69,10 @@ spec:
               readiness: *probes
             resources:
               requests:
-                cpu: 14m
-                memory: 431M
+                cpu: 10m
+                memory: 250Mi
               limits:
-                memory: 431M
+                memory: 2000Mi
     service:
       app:
         controller: radarr
