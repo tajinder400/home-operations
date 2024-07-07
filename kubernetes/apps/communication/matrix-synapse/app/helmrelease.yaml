@@ -131,7 +131,7 @@ spec:
       enabled: false
 
     externalPostgresql:
-      host: postgres16.databases.svc.cluster.local
+      host: postgres16.database.svc.cluster.local
       port: 5432
       username: synapse
       password: ${SECRET_MATRIX_POSTGRESQL_PASSWORD}
