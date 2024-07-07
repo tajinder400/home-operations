@@ -21,4 +21,4 @@ resources:
   - ./intel.yaml
   - ./node-feature-discovery.yaml
   - ./cloudnative-pg.yaml
-  - ./anance-charts.yaml
+  - ./ananace-charts.yaml
