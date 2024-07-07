@@ -144,5 +144,4 @@ spec:
     - hosts:
         - m.${SECRET_DOMAIN}
         - synapse.${SECRET_DOMAIN}
-      secretName: wabbit-life-production
-      namespace: network
+  #    secretName: wabbit-life-production
