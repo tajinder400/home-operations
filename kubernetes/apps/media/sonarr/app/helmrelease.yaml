@@ -69,9 +69,10 @@ spec:
               readiness: *probes
             resources:
               requests:
-                cpu: 10m
+                cpu: 20m
+                memory: 500Mi
               limits:
-                memory: 2Gi
+                memory: 768M
     service:
       app:
         controller: sonarr

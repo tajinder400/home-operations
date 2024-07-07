@@ -5,5 +5,5 @@ kind: Kustomization
 resources:
   - ./namespace.yaml
   - ./vaultwarden/ks.yaml
-  - ./authentik/ks.yaml
+  #- ./authentik/ks.yaml
   #- ./filebrowser/ks.yaml

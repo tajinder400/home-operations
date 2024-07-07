@@ -71,9 +71,10 @@ spec:
               readiness: *probes
             resources:
               requests:
-                cpu: 100m
+                cpu: 300m
+                memory: 1Gi
               limits:
-                memory: 8Gi
+                memory: 2Gi
     service:
       app:
         controller: sabnzbd
