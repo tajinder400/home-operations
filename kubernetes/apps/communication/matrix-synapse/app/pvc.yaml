@@ -2,7 +2,7 @@ apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
   name: synapse-data
-  namespace: comms
+  namespace: communication
 spec:
   accessModes:
     - ReadWriteOnce
