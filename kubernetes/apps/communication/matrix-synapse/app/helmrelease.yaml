@@ -110,6 +110,22 @@ spec:
         enabled: true
       enable_3pid_lookup: false
 
+      oidc_providers:
+        - idp_id: authentik
+          idp_name: Skylab SSO
+          discover: true
+          issuer: "https://id.skylab.fi/application/o/matrix/"
+          client_id: "matrix"
+          client_secret: ${SECRET_AUTHENTIK_MATRIX_CLIENT}
+          scopes:
+            - "openid"
+            - "profile"
+            - "email"
+          user_mapping_provider:
+            config:
+              localpart_template: "{{ user.nickname }}"
+              display_name_template: "{{ user.name | capitalize }}"
+
     ingress:
       enabled: true
       className: external
