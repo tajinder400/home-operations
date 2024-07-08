@@ -101,7 +101,7 @@ identity_providers:
         public: false
         authorization_policy: two_factor
         scopes: ["openid", "profile", "email"]
-        redirect_uris: ["https://m.${SECRET_DOMAIN}/_synapse/client/oidc/callback"]
+        redirect_uris: ["https://synapse.${SECRET_DOMAIN}/_synapse/client/oidc/callback"]
         userinfo_signed_response_alg: none
     #  - id: miniflux
     #    description: Miniflux
