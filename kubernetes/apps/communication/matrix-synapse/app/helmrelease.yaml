@@ -112,19 +112,21 @@ spec:
 
       oidc_providers:
         - idp_id: authentik
-          idp_name: Skylab SSO
+          idp_name: Authelia
           discover: true
-          issuer: "https://id.skylab.fi/application/o/matrix/"
-          client_id: "matrix"
-          client_secret: ${SECRET_AUTHENTIK_MATRIX_CLIENT}
+          issuer: "https://auth.wabbit.life"
+          client_id: "synapse"
+          client_secret: ${SECRET_SYNAPSE_OAUTH_CLIENT_SECRET}
           scopes:
             - "openid"
             - "profile"
             - "email"
           user_mapping_provider:
             config:
-              localpart_template: "{{ user.nickname }}"
-              display_name_template: "{{ user.name | capitalize }}"
+              subject_claim: "sub"
+              localpart_template: "{{ user.preferred_username }}"
+              display_name_template: "{{ user.name }}"
+              email_template: "{{ user.email }}"
 
     ingress:
       enabled: true
