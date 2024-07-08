@@ -35,7 +35,7 @@ session:
       default_redirection_url: https://${SECRET_DOMAIN}
   redis:
     database_index: 2
-    host: redis.database.svc.cluster.local
+    host: dragonfly.database.svc.cluster.local
 
 
 notifier:
