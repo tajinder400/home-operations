@@ -41,13 +41,13 @@ session:
 notifier:
   disable_startup_check: false
   smtp:
-    username: ${SMTP_USERNAME}
-    password: ${SMTP_PASSWORD}
+    username: ${SECRET_SMTP_USERNAME}
+    password: ${SECRET_SMTP_PASSWORD}
     host: smtp.gmail.com
     port: 587
-    sender: ${AUTHELIA_SMTP_ADDRESS}
+    sender: ${SECRET_AUTHELIA_SMTP_ADDRESS}
     subject: "[Authelia] {title}"
-    startup_check_address: ${AUTHELIA_SMTP_STARTUP_ADDRESS}
+    startup_check_address: ${SECRET_AUTHELIA_SMTP_STARTUP_ADDRESS}
     disable_require_tls: false
     disable_html_emails: false
 
