@@ -5,7 +5,7 @@ metadata:
     namespace: security
 stringData:
     SMTP_RELAY_HOSTNAME: ENC[AES256_GCM,data:pdgXyOU=,iv:6nKXKodnJvVogrL/2b5YtzkdaoUQG+0Yyw/n9/ayeLg=,tag:BVLPouW6Nef1v8ZpTfeO8g==,type:str]
-    SMTP_RELAY_SERVER: ENC[AES256_GCM,data:F2lAL6ZnReHcuZQ92sX8M+9d,iv:t9j0GyOY4Hj0ePTOkMxVlf++MWnJSFZjxagE1Be5FsQ=,tag:Vh+S8VnB08UG1WE4bOhpjQ==,type:str]
+    SMTP_RELAY_SERVER: ENC[AES256_GCM,data:jVvAejnW7219cLFjpyg=,iv:hf35qPKeFCODQU9292dvgSBWGdl/Mq6jXM9IuTm8LWE=,tag:/7ukqpVHRGYJFE8Q4CD0jw==,type:str]
     SMTP_RELAY_USERNAME: ENC[AES256_GCM,data:2edL4Zpi41/cemjF5SxBmjIsx4i/fzs=,iv:8CJllh+1NQVjW1m5/MXMTTa+9x6nyBWgbINJrXorxP4=,tag:fNKJRTK/gn58WPPTODG+8w==,type:str]
     SMTP_RELAY_PASSWORD: ENC[AES256_GCM,data:iUiLFTbaW2IO5ZPMuf8CIqRTgQ==,iv:bfW4oGu1iCBCstl8T/ahKP1SruoF6GNlVPAuhLQLgyc=,tag:0Z72+uu9DLy9tSt84elVhw==,type:str]
 sops:
@@ -23,8 +23,8 @@ sops:
             Z3QwK2phQjdqOWc4UUV2dlFrc0dNYTQKt1P+M/VbrAMjaJVFlMeMsDDIRkwmaYxA
             Tt1Uk0W0rwD8BoGEX/6gE4pmOENdK06y8EXLJCMi1Tg1inzBGGjmAA==
             -----END AGE ENCRYPTED FILE-----
-    lastmodified: "2024-07-08T13:34:34Z"
-    mac: ENC[AES256_GCM,data:3/NN29YymxtO+3trifCimEr6OeVz/rv8Eq3zwSwXulghEcy9Vm4ZrSDl0T1bsiHzJE4nNojw0BEDa+QYs1At9QDQGBOJsrnuVNphRcmz+AXM/9WH+i/upBnFY/dJiqZXwHi+gwC/8+kemZiLVJ3ZUK8DlZIYW5hggKm3Vm7j1xA=,iv:sTzdZRbr3JU22Sk5aSrZ3VwwgqFZznYISzDS73qLmeM=,tag:m1SjC5Z9wecXX+bV4mXUSQ==,type:str]
+    lastmodified: "2024-07-08T13:38:40Z"
+    mac: ENC[AES256_GCM,data:koIHltu8x9p16Vjk7nYGSjVOVjbJG5OfjkMa5AYHoLIwNOuugBUg/2+8JbV+vCsA9Uj9hK0j2r2BEiFIvNfJNMKZhilNMtMUa+JInHuV5ExT3IEzCsKMd9gXfKPvxJeNF1asS1rG7VFknTHQpaKUTN1HIQTuwmrJv0AshkM5qT8=,iv:fKtDFWpobH317FuB8foR0FWueD3nLrxyjrCT75TduH0=,tag:PN8MHkC2LcSAVQFr3d7SjA==,type:str]
     pgp: []
     encrypted_regex: ^(data|stringData)$
     version: 3.8.1
