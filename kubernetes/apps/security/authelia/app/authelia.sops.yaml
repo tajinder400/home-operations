@@ -27,8 +27,8 @@ stringData:
     SECRET_SMTP_USERNAME: ENC[AES256_GCM,data:zH63Dedy8XX85bnGUtQNQLDJE6Ehmi8=,iv:9PMHiQD6VkgpQvQ7QPyWGVQRWMsNLzlQNRP7G17+Vic=,tag:UhBtvgPBOfX0wGj3PttvUA==,type:str]
     SECRET_SMTP_PASSWORD: ENC[AES256_GCM,data:gyXH8ytBkRDW1Vj3g5f2OaFfrw==,iv:vHtG+GLH1O1BnwL4jkfGt8e6TqZoVQP3qXOpScSxGOk=,tag:ptEK4twhTkUFAabWX7ShvQ==,type:str]
     SECRET_AUTHELIA_SMTP_ADDRESS: ENC[AES256_GCM,data:tP5E8yFV+ZFpvIYqio5CAHxOQYM=,iv:YVvwkWzAB8/zKsViJSbZXGdgHF4wwW29pYOv8+G3bCI=,tag:9wQO/E/1AirnPKbZUupmbg==,type:str]
-    SECRET_AUTHELIA_SMTP_STARTUP_ADDRESS: ENC[AES256_GCM,data:N592v+1z0+WRZkvyORyPX6xjChI=,iv:qHe1D3WYTGesBU9IT9v3xa54zLfvirsOMgBe0qrhZIg=,tag:hfeJ4Sjd0ulcIwo/EiSKsw==,type:str]
-    SECRET_DOMAIN: ENC[AES256_GCM,data:l7t4gRZevdSUtdk=,iv:2+UMUyUmm8TTgMPYp27WGjiR0YaCYo/L1D0U+3G3yYY=,tag:zVYiAbhp7NYnm14MUFmvLQ==,type:str]
+    SECRET_AUTHELIA_SMTP_STARTUP_ADDRESS: ENC[AES256_GCM,data:UwBBWPMI6Kc0tJK1ftzbf2DenpQ=,iv:UfMl+yKf+Vt3D1QEvpbLIuvZjFw40y+g4PFoDf93x88=,tag:F5ArKg6UiAdSWIKI5+vwWA==,type:str]
+    SECRET_DOMAIN: ENC[AES256_GCM,data:+TG140Rg9u3SwsAEeC+aUg==,iv:StZmy5a/p8xfK+WLmXtIewHEyWyQsY4W+w5foxSq1Vo=,tag:qt2BOOR0BuVSRYKHJhXkAw==,type:str]
 sops:
     kms: []
     gcp_kms: []
@@ -44,8 +44,8 @@ sops:
             c0JtQ2FaUVhOeDBLWmVlSG84OFRsSlEK2ugf9bUmPuhi653vhZ82xfdV/QkYTZbJ
             coz5JWlwkV9KTx0a2GY6/l96kTEK3e8FSG1oOtRalnzGrnGbdtm/1Q==
             -----END AGE ENCRYPTED FILE-----
-    lastmodified: "2024-07-08T14:38:04Z"
-    mac: ENC[AES256_GCM,data:EhJvC09U6wQufnpbuUeAASJak/8q2EKbBWqnNbRS9EW47s0yr749x8l2qGF1yuBVz9j69i6AMtWYQqBed308NyzNlsLt9sW7uezBwAHj5qQXn1wx7CoLzInqcfiCIbJ9I6z1JyVZOFDsUYHKigY4MpUhUa4Upasu4MrhV6xOGnQ=,iv:XtDawH/xJx9VDMzJk8pUiktPuSVIb4Rt1gQCdW0zZOo=,tag:qMAi3Qn+k4WL25k6SwvGMQ==,type:str]
+    lastmodified: "2024-07-08T14:46:46Z"
+    mac: ENC[AES256_GCM,data:7j3eCLB3cy0GgpJDz77AOnpo4l7elMMfCIqDHHRoWiikRObMT8dUZ5D5AtAQZxO5Z7P60oA4N0Qj84VrFoKQUGTt+bAcjbY1K/U0AlConwQwlTZAU7kkHBK2MA5gNkEXUOPfsXDgjR9eKFYvLAAS1UcGIcQDI91y7+9M5IYX5nU=,iv:sXOP1thw8lHhK0v8ycSctqqaWTw97KMiGUAZ0Je9NIc=,tag:8pCnLHN0l8Z17cHJqkHaow==,type:str]
     pgp: []
     encrypted_regex: ^(data|stringData)$
     version: 3.8.1
