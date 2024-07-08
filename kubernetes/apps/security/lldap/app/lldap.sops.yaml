@@ -2,6 +2,7 @@ apiVersion: v1
 kind: Secret
 metadata:
     name: lldap-secret
+    namespace: security
 stringData:
     LLDAP_JWT_SECRET: ENC[AES256_GCM,data:/vbR/f5oY3/td7sVUk63mjCqMj7aea10n9xzhf13+6O5AvafHj3fd2uNwnyOKskRSANhIWNAd9NavOdxY06A2A==,iv:y3kqA3D8kVSkm6JVFq13r94YeUHktKtV/I3Kpu3m6qU=,tag:nVEczlGFsHCX90H8TkI36g==,type:str]
     LLDAP_LDAP_USER_PASS: ENC[AES256_GCM,data:82QmMqsO9t5gmMZbxD6D,iv:AsEfRCzgCH5qTSNFA0bA3goGY+xNmAYEHC9+mhkNXSc=,tag:jtsE0ngPTgF4fIhs+/Fw0A==,type:str]
@@ -30,8 +31,8 @@ sops:
             Mkg2Q05kOWt6Ukd5UmQ1YUI3ZUhKSkkKLNppPBCczkGiLVK+TE16Gd1qkagg8NN5
             w48BsCcvGiglwc9o+E35kHpx8C9aH8FYrFnwujvWgBMISX7Pwsfmpg==
             -----END AGE ENCRYPTED FILE-----
-    lastmodified: "2024-07-08T11:36:12Z"
-    mac: ENC[AES256_GCM,data:da1YnAEGo+zYQozWHKsuYWWeE+dIBwMG8pCL4ujI44NEGb8gbyO5ur780FJdLBT8vJIfOPyXs5d7RPNkwtnbTDQxtUTuBECTlWsyLK+0VojSY3scpLGYIHEFEBgFvYO2/08ng/obdMn8g776SJF/2PXi+V+eLubAzqxokl/p/Gs=,iv:a9MorV2b0n6qXG3hA/eyRRPnVbSDjV3HYTKtTZzq7Lo=,tag:DTGbR47fvZh5nVtlKGQO8w==,type:str]
+    lastmodified: "2024-07-08T11:40:57Z"
+    mac: ENC[AES256_GCM,data:oB19+Kztd5VfaqSyELSzo72IsY25GT0f2gbfywqNToayqmZTfjUnYG9XyDLNEpKZzq+BetLQguxpTHOaF7/h2oFapsvSBfuhATPro7TO/WrQ8SjqbxxFqTR9h6LMXwJvabcR27HeJui4/tbxA/Vbq4eTwLGMWSivHDHmgpRPD00=,iv:gAjdu6fsSM5MwkaGNdQAvgIKAorOV4EcbDO2hcY679A=,tag:mtGnrQIJr9WGFuPFao5byg==,type:str]
     pgp: []
     encrypted_regex: ^(data|stringData)$
     version: 3.8.1
