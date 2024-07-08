@@ -10,6 +10,9 @@ spec:
   commonMetadata:
     labels:
       app.kubernetes.io/name: *app
+  dependsOn:
+    - name: cloudnative-pg
+    - name: redis
   path: ./kubernetes/apps/security/authelia/app
   sourceRef:
     kind: GitRepository
