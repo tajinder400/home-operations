@@ -28,6 +28,7 @@ stringData:
     SECRET_SMTP_PASSWORD: ENC[AES256_GCM,data:gyXH8ytBkRDW1Vj3g5f2OaFfrw==,iv:vHtG+GLH1O1BnwL4jkfGt8e6TqZoVQP3qXOpScSxGOk=,tag:ptEK4twhTkUFAabWX7ShvQ==,type:str]
     SECRET_AUTHELIA_SMTP_ADDRESS: ENC[AES256_GCM,data:tP5E8yFV+ZFpvIYqio5CAHxOQYM=,iv:YVvwkWzAB8/zKsViJSbZXGdgHF4wwW29pYOv8+G3bCI=,tag:9wQO/E/1AirnPKbZUupmbg==,type:str]
     SECRET_AUTHELIA_SMTP_STARTUP_ADDRESS: ENC[AES256_GCM,data:N592v+1z0+WRZkvyORyPX6xjChI=,iv:qHe1D3WYTGesBU9IT9v3xa54zLfvirsOMgBe0qrhZIg=,tag:hfeJ4Sjd0ulcIwo/EiSKsw==,type:str]
+    SECRET_DOMAIN: ENC[AES256_GCM,data:l7t4gRZevdSUtdk=,iv:2+UMUyUmm8TTgMPYp27WGjiR0YaCYo/L1D0U+3G3yYY=,tag:zVYiAbhp7NYnm14MUFmvLQ==,type:str]
 sops:
     kms: []
     gcp_kms: []
@@ -43,8 +44,8 @@ sops:
             c0JtQ2FaUVhOeDBLWmVlSG84OFRsSlEK2ugf9bUmPuhi653vhZ82xfdV/QkYTZbJ
             coz5JWlwkV9KTx0a2GY6/l96kTEK3e8FSG1oOtRalnzGrnGbdtm/1Q==
             -----END AGE ENCRYPTED FILE-----
-    lastmodified: "2024-07-08T14:29:01Z"
-    mac: ENC[AES256_GCM,data:jrRx0bIH18qTHOqD1aX7yU0xgjcg2g5ZY1WjHllvfemXGXPFSRZ7iGNI15AH99kQZn6AeoPdVUH6rgKULnU+RbTmgnMSME0vI2UOl5NttcCgjgIoU1+VawhT2GQEN0JAJ5BYD4oqRt2Bdrqnt772a5HbHljOTrW/QDGPeKSzaeQ=,iv:qHX1zs9ltNJN0K11E9zAgbm6uP0gQ/twJtnjKPj9Eyw=,tag:a9Bj7zvt/5nlLonYS237FQ==,type:str]
+    lastmodified: "2024-07-08T14:31:36Z"
+    mac: ENC[AES256_GCM,data:6zB2C+fRpvJMkeZqBICldR8MFolP6dRJ977JfYq0Gp50fOyQDAXsNvqpHsRsscpwyNeliyF8diFj6NgPIrkOzf3qwh6AJu/fdKO35TdebIfQ10n/8LIRHjBTrWOADgeVpOUoWiGAJG/4oJQdfQcsBydkHFYqUc8AF8QuERcRTrs=,iv:3Tz6Yb4o5dMxhH76zjYESo8jmVpsvZm8mkzeIFpwOdc=,tag:Vaf4l24842FX5CenzRMHjg==,type:str]
     pgp: []
     encrypted_regex: ^(data|stringData)$
     version: 3.8.1
