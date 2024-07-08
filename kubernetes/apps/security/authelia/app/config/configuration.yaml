@@ -89,11 +89,11 @@ password_policy:
     require_number: true
     require_special: true
 
-identity_providers:
-  oidc:
-    cors:
-      endpoints: ["authorization", "token", "revocation", "introspection"]
-      allowed_origins_from_client_redirect_uris: true
+#identity_providers:
+#  oidc:
+#    cors:
+#      endpoints: ["authorization", "token", "revocation", "introspection"]
+#      allowed_origins_from_client_redirect_uris: true
     #clients:
     #  - id: grafana
     #    description: Grafana
