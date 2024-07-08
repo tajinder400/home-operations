@@ -12,7 +12,7 @@ spec:
       app.kubernetes.io/name: *app
   dependsOn:
     - name: cloudnative-pg
-    - name: redis
+    - name: dragonfly-cluster
   path: ./kubernetes/apps/security/authelia/app
   sourceRef:
     kind: GitRepository
