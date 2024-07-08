@@ -1,0 +1,30 @@
+apiVersion: v1
+kind: Secret
+metadata:
+    name: smtp-relay-secret
+    namespace: security
+stringData:
+    SMTP_RELAY_HOSTNAME: ENC[AES256_GCM,data:pdgXyOU=,iv:6nKXKodnJvVogrL/2b5YtzkdaoUQG+0Yyw/n9/ayeLg=,tag:BVLPouW6Nef1v8ZpTfeO8g==,type:str]
+    SMTP_RELAY_SERVER: ENC[AES256_GCM,data:F2lAL6ZnReHcuZQ92sX8M+9d,iv:t9j0GyOY4Hj0ePTOkMxVlf++MWnJSFZjxagE1Be5FsQ=,tag:Vh+S8VnB08UG1WE4bOhpjQ==,type:str]
+    SMTP_RELAY_USERNAME: ENC[AES256_GCM,data:2edL4Zpi41/cemjF5SxBmjIsx4i/fzs=,iv:8CJllh+1NQVjW1m5/MXMTTa+9x6nyBWgbINJrXorxP4=,tag:fNKJRTK/gn58WPPTODG+8w==,type:str]
+    SMTP_RELAY_PASSWORD: ENC[AES256_GCM,data:iUiLFTbaW2IO5ZPMuf8CIqRTgQ==,iv:bfW4oGu1iCBCstl8T/ahKP1SruoF6GNlVPAuhLQLgyc=,tag:0Z72+uu9DLy9tSt84elVhw==,type:str]
+sops:
+    kms: []
+    gcp_kms: []
+    azure_kv: []
+    hc_vault: []
+    age:
+        - recipient: age1x9asfknr3janmqkcm9nlcg5hzm59wtdhs6u9lhweaddagnvg9amq22505d
+          enc: |
+            -----BEGIN AGE ENCRYPTED FILE-----
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBoVkFCdjBoOFM5a05FalIv
+            bWhvdjdwUXM2QnhvenhVaGh4MGxlSlNXT2lFCkdZSVNEMWZwdXozVXMxYXFzME9K
+            ZTlCWGhFM25lcjdmSEFBYWZUVXFzcFUKLS0tIDJERzA5SVY0Y1UwSmFWM3c2SWJX
+            Z3QwK2phQjdqOWc4UUV2dlFrc0dNYTQKt1P+M/VbrAMjaJVFlMeMsDDIRkwmaYxA
+            Tt1Uk0W0rwD8BoGEX/6gE4pmOENdK06y8EXLJCMi1Tg1inzBGGjmAA==
+            -----END AGE ENCRYPTED FILE-----
+    lastmodified: "2024-07-08T13:34:34Z"
+    mac: ENC[AES256_GCM,data:3/NN29YymxtO+3trifCimEr6OeVz/rv8Eq3zwSwXulghEcy9Vm4ZrSDl0T1bsiHzJE4nNojw0BEDa+QYs1At9QDQGBOJsrnuVNphRcmz+AXM/9WH+i/upBnFY/dJiqZXwHi+gwC/8+kemZiLVJ3ZUK8DlZIYW5hggKm3Vm7j1xA=,iv:sTzdZRbr3JU22Sk5aSrZ3VwwgqFZznYISzDS73qLmeM=,tag:m1SjC5Z9wecXX+bV4mXUSQ==,type:str]
+    pgp: []
+    encrypted_regex: ^(data|stringData)$
+    version: 3.8.1
