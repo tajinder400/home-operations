@@ -1,0 +1,37 @@
+apiVersion: v1
+kind: Secret
+metadata:
+    name: lldap-secret
+stringData:
+    LLDAP_JWT_SECRET: ENC[AES256_GCM,data:/vbR/f5oY3/td7sVUk63mjCqMj7aea10n9xzhf13+6O5AvafHj3fd2uNwnyOKskRSANhIWNAd9NavOdxY06A2A==,iv:y3kqA3D8kVSkm6JVFq13r94YeUHktKtV/I3Kpu3m6qU=,tag:nVEczlGFsHCX90H8TkI36g==,type:str]
+    LLDAP_LDAP_USER_PASS: ENC[AES256_GCM,data:82QmMqsO9t5gmMZbxD6D,iv:AsEfRCzgCH5qTSNFA0bA3goGY+xNmAYEHC9+mhkNXSc=,tag:jtsE0ngPTgF4fIhs+/Fw0A==,type:str]
+    LLDAP_USER_DN: ENC[AES256_GCM,data:i0p1on0VmJ1OIELp53m8py52szbioGz5I+QlsO6o/Izm91QJI3UE6Q==,iv:+BuE7Aa83UUDM9DKD9g9LH1KOv/3EartRqKbezdzHfI=,tag:CRPl0bPoxT5Wp9VlxIijjA==,type:str]
+    LLDAP_LDAP_USER_EMAIL: ENC[AES256_GCM,data:IP+PjuE7I0Y5x+Sbngpv+R9cI+U=,iv:AYBREXuyO7W9sEOVyVfs9wz/Jy7zkFD0expnqjS/Xys=,tag:aoE2ht5ZuTmC5igiU4bscg==,type:str]
+    LLDAP_SERVER_KEY_SEED: ENC[AES256_GCM,data:ZXU2J9o7dHptrzqCqdwm3YWbn5yYJBhB+U5COEzuqIewRZfMLn2dpyZ936K2ZsJ2c2ZKrikHeNuBme3INoPFZA==,iv:DV5aYeZcaa4WzG92y9rCUKRNJO9TCKYzLEbze9X6qMk=,tag:Dig1jDDYPZeXsGvQXT583w==,type:str]
+    LLDAP_DATABASE_URL: ENC[AES256_GCM,data:AYfwQJs9RDk+JJqIDKm9TZ7yRoh5dINTs9dNL4IWkv2roYKt0+dJe8jSWoy21vUzMnlvFt6KZuBteNNM79QKUbvYpSIawOtpttuZyxNb0Q==,iv:PRXgAZbkhdXQqd0aSea35idvvS3rHhO7CoOY+Q1QHXk=,tag:VnG7VZPeHsD+Gwn+eTV7dw==,type:str]
+    #ENC[AES256_GCM,data:Vb31CDzHxj8k5vVGWy8=,iv:HYvUz6ut9ooNpvLyg+5xSpegffjT+PI5jKG3QljPU3k=,tag:4MQGe0y2s37YyWE4wI1nQQ==,type:comment]
+    INIT_POSTGRES_DBNAME: ENC[AES256_GCM,data:wo56hEE=,iv:c39cgjE8aqX2YYwc8Qr/tmOPPmP7ctp8+Vh2NzUd/wo=,tag:xihwXsBDXRlSz1B5fq75gQ==,type:str]
+    INIT_POSTGRES_HOST: ENC[AES256_GCM,data:nxAvanBY6nU/tgrrHeqgtmYI59mkCpKfRzEWoxk8qegbxy+RkzjuWQ==,iv:lZZDVpQwIRdIVyz1/ik3jV+8iKipLoGrRcS4GCnF6WA=,tag:rQ6f9iuviepujaOTI6f8HQ==,type:str]
+    INIT_POSTGRES_USER: ENC[AES256_GCM,data:vCNCg2A=,iv:QrB81FQqcE5/al63sJy0Yccu6o+184YFBTunSRYoe2c=,tag:W/JdLxp7IL/A2TXSzgbVuw==,type:str]
+    INIT_POSTGRES_PASS: ENC[AES256_GCM,data:UM2egcaJ2hgb6N1E/tdl,iv:++3fRUSbBoFoKHMqkNx+FgSu4z6pQGd1XGnrmgVgt1E=,tag:eEIp4bJeBjDf+CtFWhMqDQ==,type:str]
+    INIT_POSTGRES_SUPER_PASS: ENC[AES256_GCM,data:yEwlLghooffT0RP0yDc=,iv:AilQCCIbIZYtbiUBlrzBOlWItjym8Zho5oZi1gA592c=,tag:Yk9c7WheK3qia1lThp95Kg==,type:str]
+sops:
+    kms: []
+    gcp_kms: []
+    azure_kv: []
+    hc_vault: []
+    age:
+        - recipient: age1x9asfknr3janmqkcm9nlcg5hzm59wtdhs6u9lhweaddagnvg9amq22505d
+          enc: |
+            -----BEGIN AGE ENCRYPTED FILE-----
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBiUVAxVGVtYm0xYnlSR0R0
+            U3g0NFNLaDZwWEowd2p2YzBMbndBdHZ0a2cwCjVtVlV1eFdYRnJDWFNYWjhMV3Y1
+            dWg0dzhJakhaMFFIWlhUbEhoZWRSMncKLS0tIC9CbjZPNlRaVEVRRkswYk5BWFhn
+            Mkg2Q05kOWt6Ukd5UmQ1YUI3ZUhKSkkKLNppPBCczkGiLVK+TE16Gd1qkagg8NN5
+            w48BsCcvGiglwc9o+E35kHpx8C9aH8FYrFnwujvWgBMISX7Pwsfmpg==
+            -----END AGE ENCRYPTED FILE-----
+    lastmodified: "2024-07-08T11:06:28Z"
+    mac: ENC[AES256_GCM,data:N3OqayJRLrmhiGCzJxH5py7X6h6DjfbMmOY2yJt+n+ulm/W4TqcOFWKiF7ByHy8fo4jRMp/z9X6It+WDGQgys+tr6zxw7jYbgbcAhCCpP5KMt63u0btH87RqXx/XID5AsR0ruyW1Tp3s7WgqYys8mm1hTqAo0qfpT952ufVpCp0=,iv:dvLpLLA/b+PYle7eZfPaQCym3Bwrwv3rsfxYxYN3DPk=,tag:HlOKMg0GbzkG41pWJu68Lw==,type:str]
+    pgp: []
+    encrypted_regex: ^(data|stringData)$
+    version: 3.8.1
