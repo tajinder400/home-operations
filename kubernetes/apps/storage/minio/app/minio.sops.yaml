@@ -3,7 +3,7 @@ kind: Secret
 metadata:
     name: minio-secret
 stringData:
-    MINIO_ROOT_USER: ENC[AES256_GCM,data:xkCFjkveKtUug0HbqWZM,iv:D2sjsvskapjeQ8OAMU+oiRi6pcpplf8v8qXBIxxgNmo=,tag:8qCnYc7d5z9dXpA/rHUJNA==,type:str]
+    MINIO_ROOT_USER: ENC[AES256_GCM,data:+TTnXJ8=,iv:TkkxxRAvbt0GPU3HepxphjVNRZtZIFvy5KLvIni9hDw=,tag:nBsrVr5ILXcyH7F39JZ//A==,type:str]
     MINIO_ROOT_PASSWORD: ENC[AES256_GCM,data:wIShO/cWxDu5aw0MZs/H,iv:9Nof6xM+1v+4lBgwFvRoutTQT8HcHkL26aj/PICKo9I=,tag:tVw4kjyzwBP+7MwrhccnNQ==,type:str]
 sops:
     kms: []
@@ -20,8 +20,8 @@ sops:
             V3VVdWZ4Ry9GQllHTG1YUitJUVRVT3MKjpUmtVm/8qkZQaeDQ/tiHE+87SRSMoty
             dpcsuzzwOxjRZpgNGx8GREavB3heXHPJpS2M1lVE/bilYeieq5hDSg==
             -----END AGE ENCRYPTED FILE-----
-    lastmodified: "2024-07-10T15:41:27Z"
-    mac: ENC[AES256_GCM,data:HS76fQi+4duiRDiwVd6LHSSLpJj7V4LO7LtMJRvsgolv+bq0syQdMXVJ0Qkf8gZXq1WNcbv2P4LAZbSEzei/r+hbFUxGOPSvb+M70+h7KL/obj5h35SwLxJzY3OPU4hYC8z9eLTSMfAkNBGYcRhgUgu52WqAGryuqeBkN2NxyB0=,iv:l6wWSNiaqlQJQ3Y4MWP9uAaopbaVEHLq3KravyhxB7U=,tag:XWfQRk0+EWKjyJfClCQlaA==,type:str]
+    lastmodified: "2024-07-10T19:24:49Z"
+    mac: ENC[AES256_GCM,data:HTQtbKhgOw3KdTB0pnxtIAfwhwKBK+7ObR7wVkOIQ13DHGTF3+MlRwNJUgtzf8ynKjkgZ/d43FhyehEGxpz8DGWvRGcK9rA1hKOW57dAzljIjZQyZbuZATERxrY1YPNR4/DN5kIDgVyFsc6+DZsLGhPC34Kqqkq7JhTfCCnTeQo=,iv:xMKWUgEqMCpHDaHMfVFNO1f68ZbRs+EshW1Z+BX4jLE=,tag:v0kegEF4k4WDzhGvg3bLFA==,type:str]
     pgp: []
     encrypted_regex: ^(data|stringData)$
     version: 3.8.1
