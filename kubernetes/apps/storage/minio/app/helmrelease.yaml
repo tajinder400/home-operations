@@ -35,16 +35,16 @@ spec:
             env:
               MINIO_API_CORS_ALLOW_ORIGIN: https://minio.${SECRET_DOMAIN},https://s3.${SECRET_DOMAIN}
               MINIO_BROWSER_REDIRECT_URL: https://minio.${SECRET_DOMAIN}
-              #MINIO_PROMETHEUS_JOB_ID: minio
-              #MINIO_PROMETHEUS_URL: https://prometheus.${SECRET_DOMAIN}
-              #MINIO_PROMETHEUS_AUTH_TYPE: public
+              MINIO_PROMETHEUS_JOB_ID: minio
+              MINIO_PROMETHEUS_URL: https://prometheus.${SECRET_DOMAIN}
+              MINIO_PROMETHEUS_AUTH_TYPE: public
               MINIO_SERVER_URL: https://s3.${SECRET_DOMAIN}
               MINIO_STORAGE_CLASS_RRS: EC:0
               MINIO_STORAGE_CLASS_STANDARD: EC:0
               MINIO_UPDATE: "off"
-            #envFrom:
-            #  - secretRef:
-            #      name: minio-secret
+            envFrom:
+              - secretRef:
+                  name: minio-secret
             args: ["server", "/data", "--console-address", ":9001"]
             probes:
               liveness: &probes
@@ -100,22 +100,18 @@ spec:
           external-dns.alpha.kubernetes.io/target: internal.${SECRET_DOMAIN}
         className: internal
         hosts:
-          - host: &host "{{ .Release.Name }}.${SECRET_DOMAIN}"
+          - host: "{{ .Release.Name }}.${SECRET_DOMAIN}"
             paths:
               - path: /
                 service:
                   identifier: app
                   port: http
-          - host: &s3Host s3.${SECRET_DOMAIN}
+          - host: s3.${SECRET_DOMAIN}
             paths:
               - path: /
                 service:
                   identifier: app
                   port: s3
-        tls:
-          - hosts:
-              - *host
-              - *s3Host
     persistence:
       config:
         type: nfs
