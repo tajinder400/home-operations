@@ -1,9 +1,9 @@
 ---
-# yaml-language-server: $schema=https://raw.githubusercontent.com/bjw-s/helm-charts/main/charts/other/app-template/schemas/helmrelease-helm-v2.schema.json
+# yaml-language-server: $schema=https://kubernetes-schemas.pages.dev/helm.toolkit.fluxcd.io/helmrelease_v2beta2.json
 apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
-  name: minio
+  name: &app minio
 spec:
   interval: 30m
   chart:
@@ -14,15 +14,18 @@ spec:
         kind: HelmRepository
         name: bjw-s
         namespace: flux-system
+  maxHistory: 2
   install:
     remediation:
       retries: 3
   upgrade:
     cleanupOnFail: true
     remediation:
-      strategy: rollback
       retries: 3
+  uninstall:
+    keepHistory: false
   values:
+
     defaultPodOptions:
       securityContext:
         runAsUser: 568
@@ -31,29 +34,33 @@ spec:
         fsGroupChangePolicy: "OnRootMismatch"
         supplementalGroups:
           - 65539
+
     controllers:
       minio:
         annotations:
           reloader.stakater.com/auto: "true"
+
         containers:
-          app:
+          minio:
             image:
               repository: quay.io/minio/minio
-              tag: RELEASE.2024-07-13T01-46-15Z@sha256:be3db71ebafc2f4b1ec08330f37417b9c316d088447d88e501be075515214cab
+              tag: RELEASE.2024-07-13T01-46-15Z
             env:
               MINIO_API_CORS_ALLOW_ORIGIN: https://minio.${SECRET_DOMAIN},https://s3.${SECRET_DOMAIN}
               MINIO_BROWSER_REDIRECT_URL: https://minio.${SECRET_DOMAIN}
               #MINIO_PROMETHEUS_JOB_ID: minio
-              #MINIO_PROMETHEUS_URL: https://prometheus.${SECRET_DOMAIN}
+              #MINIO_PROMETHEUS_URL: https://thanos.observability.svc.cluster.local
               #MINIO_PROMETHEUS_AUTH_TYPE: public
               MINIO_SERVER_URL: https://s3.${SECRET_DOMAIN}
-              MINIO_STORAGE_CLASS_RRS: EC:0
-              MINIO_STORAGE_CLASS_STANDARD: EC:0
               MINIO_UPDATE: "off"
             #envFrom:
             #  - secretRef:
-            #      name: minio-secret
-            args: ["server", "/data", "--console-address", ":9001"]
+            #      name: &secret minio-secret
+            args:
+              - server
+              - /data
+              - --console-address
+              - :9001
             probes:
               liveness: &probes
                 enabled: true
