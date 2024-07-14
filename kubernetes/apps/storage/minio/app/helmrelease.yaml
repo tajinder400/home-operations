@@ -1,8 +1,9 @@
 ---
+# yaml-language-server: $schema=https://raw.githubusercontent.com/bjw-s/helm-charts/main/charts/other/app-template/schemas/helmrelease-helm-v2.schema.json
 apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
-  name: &app minio
+  name: minio
 spec:
   interval: 30m
   chart:
@@ -21,9 +22,6 @@ spec:
     remediation:
       strategy: rollback
       retries: 3
-  #dependsOn:
-  #  - name: volsync
-  #    namespace: volsync
   values:
     controllers:
       minio:
@@ -33,24 +31,21 @@ spec:
           app:
             image:
               repository: quay.io/minio/minio
-              tag: RELEASE.2024-07-13T01-46-15Z
+              tag: RELEASE.2024-06-29T01-20-47Z@sha256:fce0a90a37bb2887c850b68b61a0ac8ac02ea218b58eaea96bb7ca69eb503e20
             env:
-              TZ: Europe/London
-              MINIO_UPDATE: "off"
-              #MINIO_PROMETHEUS_URL: https://prometheus.${SECRET_DOMAIN}
-              #MINIO_PROMETHEUS_AUTH_TYPE: public
-              #MINIO_PROMETHEUS_JOB_ID: minio
-              MINIO_SERVER_URL: https://s3.${SECRET_DOMAIN}
               MINIO_API_CORS_ALLOW_ORIGIN: https://minio.${SECRET_DOMAIN},https://s3.${SECRET_DOMAIN}
               MINIO_BROWSER_REDIRECT_URL: https://minio.${SECRET_DOMAIN}
+              #MINIO_PROMETHEUS_JOB_ID: minio
+              #MINIO_PROMETHEUS_URL: https://prometheus.${SECRET_DOMAIN}
+              #MINIO_PROMETHEUS_AUTH_TYPE: public
+              MINIO_SERVER_URL: https://s3.${SECRET_DOMAIN}
+              MINIO_STORAGE_CLASS_RRS: EC:0
+              MINIO_STORAGE_CLASS_STANDARD: EC:0
+              MINIO_UPDATE: "off"
             #envFrom:
             #  - secretRef:
             #      name: minio-secret
-            args:
-              - server
-              - /data
-              - --console-address
-              - :9001
+            args: ["server", "/data", "--console-address", ":9001"]
             probes:
               liveness: &probes
                 enabled: true
@@ -64,14 +59,15 @@ spec:
                   timeoutSeconds: 10
                   failureThreshold: 6
               readiness: *probes
-              startup:
-                enabled: false
+            securityContext:
+              allowPrivilegeEscalation: false
+              readOnlyRootFilesystem: true
+              capabilities: { drop: ["ALL"] }
             resources:
               requests:
-                memory: 100Mi
                 cpu: 100m
               limits:
-                memory: 2G
+                memory: 2Gi
     defaultPodOptions:
       securityContext:
         runAsNonRoot: true
@@ -100,32 +96,22 @@ spec:
             scrapeTimeout: 10s
     ingress:
       app:
-        className: internal
         annotations:
           external-dns.alpha.kubernetes.io/target: internal.${SECRET_DOMAIN}
-          nginx.ingress.kubernetes.io/whitelist-source-range: "10.0.0.0/8,172.16.0.0/12,192.168.1.0/24"
-          nginx.ingress.kubernetes.io/proxy-connect-timeout: "180"
-          nginx.ingress.kubernetes.io/proxy-body-size: 1024m
-          nginx.ingress.kubernetes.io/proxy-request-buffering: "off"
-          nginx.ingress.kubernetes.io/configuration-snippet: |
-            chunked_transfer_encoding off;
+        className: internal
         hosts:
-          - host: &host minio.${SECRET_DOMAIN}
+          - host: "{{ .Release.Name }}.${SECRET_DOMAIN}"
             paths:
               - path: /
                 service:
                   identifier: app
                   port: http
-          - host: &s3Host s3.${SECRET_DOMAIN}
+          - host: s3.${SECRET_DOMAIN}
             paths:
               - path: /
                 service:
                   identifier: app
                   port: s3
-        tls:
-          - hosts:
-              - *host
-              - *s3Host
     persistence:
       config:
         type: nfs
