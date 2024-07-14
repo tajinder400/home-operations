@@ -100,22 +100,28 @@ spec:
           external-dns.alpha.kubernetes.io/target: internal.${SECRET_DOMAIN}
         className: internal
         hosts:
-          - host: &host "{{ .Release.Name }}.${SECRET_DOMAIN}"
+          - host: "{{ .Release.Name }}.${SECRET_DOMAIN}"
             paths:
               - path: /
                 service:
                   identifier: app
                   port: http
-          - host: &s3Host s3.${SECRET_DOMAIN}
+      s3:
+        annotations:
+          external-dns.alpha.kubernetes.io/target: internal.${SECRET_DOMAIN}
+          nginx.ingress.kubernetes.io/proxy-connect-timeout: "300"
+          nginx.ingress.kubernetes.io/proxy-body-size: 5000m
+          nginx.ingress.kubernetes.io/proxy-request-buffering: "off"
+          nginx.ingress.kubernetes.io/configuration-snippet: |
+            chunked_transfer_encoding off;
+        className: internal
+        hosts:
+          - host: s3.${SECRET_DOMAIN}
             paths:
               - path: /
                 service:
                   identifier: app
                   port: s3
-        tls:
-          - hosts:
-              - *host
-              - *s3Host
     persistence:
       config:
         type: nfs
