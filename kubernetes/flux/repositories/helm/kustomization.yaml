@@ -22,4 +22,3 @@ resources:
   - ./node-feature-discovery.yaml
   - ./cloudnative-pg.yaml
   - ./ananace-charts.yaml
-  - ./external-secrets.yaml
