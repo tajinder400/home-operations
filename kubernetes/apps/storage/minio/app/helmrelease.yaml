@@ -21,9 +21,9 @@ spec:
     remediation:
       strategy: rollback
       retries: 3
-  dependsOn:
-    - name: volsync
-      namespace: volsync
+  #dependsOn:
+  #  - name: volsync
+  #    namespace: volsync
   values:
     controllers:
       minio:
