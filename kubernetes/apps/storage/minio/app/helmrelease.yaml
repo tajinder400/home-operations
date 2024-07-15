@@ -114,6 +114,6 @@ spec:
       config:
         type: nfs
         server: 10.0.10.18
-        path: /mnt/mechonis/backup/minio
+        path: /mnt/bionis/minio
         globalMounts:
           - path: /data
