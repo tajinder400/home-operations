@@ -39,7 +39,7 @@ _... managed with Flux, Renovate, and GitHub Actions_ 🤖
 |----------|------------------------------|-------------------------------------------------------------------|
 | Mikrotik | RB5009                       | Edge Router connected to 1Gb Uplink                               |
 | Mikrotik | CRS309-1G-8S+IN              | Edge Switch, 10Gb SFP+ Ports                                      |
-| Ubiquiti | Unifi U7 Pro                 | Bedroom switching (gaming iTX system, Apple TV 4K and Steam Deck) |
+| Ubiquiti | Unifi U7 Pro                 | Main access point for the house                                   |
 | Raspberry| Pi4                          | PiHole & Unbound dedicated device. Will probably decomission      |
 
 All nodes are connected to a dual-stack network, with private IPv4 and public IPv6.
