@@ -37,26 +37,3 @@ spec:
         selector:
           dnsZones:
             - "${SECRET_DOMAIN}"
----
-apiVersion: external-secrets.io/v1beta1
-kind: ExternalSecret
-metadata:
-  name: &name cert-manager
-  namespace: cert-manager
-spec:
-  secretStoreRef:
-    kind: ClusterSecretStore
-    name: akeyless-secret-store
-  target:
-    name: cloudflare-token-secret
-    creationPolicy: Owner
-    template:
-      engineVersion: v2
-      data:
-        cloudflare-api-token:
-            apiTokenSecretRef:
-              name: cert-manager-secret
-              key: api-token
-  dataFrom:
-    - extract:
-        key: /cert-manager
