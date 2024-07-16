@@ -90,13 +90,7 @@ spec:
                   port: http
     persistence:
       config:
-        enabled: true
-        type: persistentVolumeClaim
-        storageClass: longhorn-snapshot
-        accessMode: ReadWriteOnce
-        size: 500M
-        retain: true
-        globalMounts: []
+        existingClaim: bazarr
       media:
         type: nfs
         server: 10.0.10.18
