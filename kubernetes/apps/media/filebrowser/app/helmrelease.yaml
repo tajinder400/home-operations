@@ -103,6 +103,6 @@ spec:
         globalMounts:
           - path: /data/appdata_backup
       plex-config:
-        existingClaim: plex-config
+        existingClaim: bazarr-config
         globalMounts:
-          - path: "/data/plex-config"
+          - path: "/data/bazarr-config"
