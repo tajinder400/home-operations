@@ -13,7 +13,7 @@ spec:
     copyMethod: Snapshot
     pruneIntervalDays: 7
     repository: bazarr-restic-secret
-    cacheCapacity: 1Gi
+    cacheCapacity: 8Gi
     cacheStorageClassName: longhorn-cache
     cacheAccessModes: [ReadWriteOnce]
     volumeSnapshotClassName: longhorn-snapclass
@@ -38,13 +38,13 @@ spec:
   restic:
     repository: bazarr-restic-secret
     copyMethod: Snapshot # must be Snapshot
-    cacheCapacity: 1Gi
+    cacheCapacity: 8Gi
     cacheStorageClassName: longhorn-cache
     cacheAccessModes: [ReadWriteOnce]
     volumeSnapshotClassName: longhorn-snapclass
     storageClassName: longhorn-snapshot
     accessModes: [ReadWriteOnce]
-    capacity: 1Gi
+    capacity: 2Gi
 ---
 # yaml-language-server: $schema=https://raw.githubusercontent.com/yannh/kubernetes-json-schema/master/v1.26.1-standalone-strict/secret-v1.json
 apiVersion: v1
