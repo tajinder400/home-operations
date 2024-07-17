@@ -90,12 +90,9 @@ spec:
                   port: http
     persistence:
       config:
-        enabled: true
         existingClaim: bazarr-config
-        advancedMounts:
-          bazarr:
-            main:
-              - path: /config
+        globalMounts:
+          - path: /config
       media:
         type: nfs
         server: 10.0.10.18
