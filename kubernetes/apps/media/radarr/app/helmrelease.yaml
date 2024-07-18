@@ -93,13 +93,7 @@ spec:
                   port: http
     persistence:
       config:
-        enabled: true
-        type: persistentVolumeClaim
-        storageClass: longhorn-snapshot
-        accessMode: ReadWriteOnce
-        size: 5Gi
-        retain: true
-        globalMounts: []
+        existingClaim: radarr-config
       media:
         type: nfs
         server: 10.0.10.18
