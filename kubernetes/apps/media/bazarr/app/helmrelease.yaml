@@ -101,9 +101,3 @@ spec:
           - path: /data
       tmp:
          type: emptyDir
-      backup-config:
-        type: nfs
-        server: 10.0.10.18
-        path: /mnt/bionis/appdata_backup
-        globalMounts:
-          - path: /backup-config
