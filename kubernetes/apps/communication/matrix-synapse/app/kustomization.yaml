@@ -5,4 +5,4 @@ resources:
   - ./helmrelease.yaml
   - ./matrix-signing-key.sops.yaml
   - ./internal-ingress.yaml
-  #- ./volsync-config.yaml
+  - ./volsync-config.yaml
