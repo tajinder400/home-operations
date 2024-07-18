@@ -13,7 +13,7 @@ spec:
     copyMethod: Snapshot
     pruneIntervalDays: 7
     repository: bazarr-restic-secret
-    cacheCapacity: 8Gi
+    cacheCapacity: 1Gi
     cacheStorageClassName: longhorn-cache
     cacheAccessModes: [ReadWriteOnce]
     volumeSnapshotClassName: longhorn-snapclass
@@ -38,7 +38,7 @@ spec:
   restic:
     repository: bazarr-restic-secret
     copyMethod: Snapshot # must be Snapshot
-    cacheCapacity: 8Gi
+    cacheCapacity: 1Gi
     cacheStorageClassName: longhorn-cache
     cacheAccessModes: [ReadWriteOnce]
     volumeSnapshotClassName: longhorn-snapclass
