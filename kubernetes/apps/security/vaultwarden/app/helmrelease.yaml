@@ -96,11 +96,6 @@ spec:
                   port: http
     persistence:
       config:
-        enabled: true
-        type: persistentVolumeClaim
-        storageClass: longhorn-snapshot
-        accessMode: ReadWriteOnce
-        size: 100M
-        retain: true
+        existingClaim: vaultwarden-config
         globalMounts:
           - path: /data
