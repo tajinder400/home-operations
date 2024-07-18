@@ -14,7 +14,7 @@ spec:
     pruneIntervalDays: 7
     repository: bazarr-restic-secret
     cacheCapacity: 8Gi
-    cacheStorageClassName: openebs-hostpath
+    cacheStorageClassName: longhorn-cache
     cacheAccessModes: [ReadWriteOnce]
     volumeSnapshotClassName: longhorn-snapclass
     storageClassName: longhorn-snapshot
@@ -39,7 +39,7 @@ spec:
     repository: bazarr-restic-secret
     copyMethod: Snapshot # must be Snapshot
     cacheCapacity: 8Gi
-    cacheStorageClassName: openebs-hostpath
+    cacheStorageClassName: longhorn-cache
     cacheAccessModes: [ReadWriteOnce]
     volumeSnapshotClassName: longhorn-snapclass
     storageClassName: longhorn-snapshot
