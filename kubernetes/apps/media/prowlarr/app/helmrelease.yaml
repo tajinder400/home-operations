@@ -93,12 +93,6 @@ spec:
                   port: http
     persistence:
       config:
-        enabled: true
-        type: persistentVolumeClaim
-        storageClass: longhorn-snapshot
-        accessMode: ReadWriteOnce
-        size: 500M
-        retain: true
-        globalMounts: []
+        existingClaim: prowlarr-config
       tmp:
         type: emptyDir
