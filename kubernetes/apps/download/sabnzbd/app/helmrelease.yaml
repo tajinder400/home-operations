@@ -95,12 +95,7 @@ spec:
                   port: http
     persistence:
       config:
-        enabled: true
-        type: persistentVolumeClaim
-        storageClass: longhorn-snapshot
-        accessMode: ReadWriteOnce
-        size: 500M
-        retain: true
+        existingClaim: sabnzbd-config
         globalMounts:
           - path: /config
       downloads:
