@@ -1,0 +1,57 @@
+---
+# yaml-language-server: $schema=https://kubernetes-schemas.pages.dev/volsync.backube/replicationsource_v1alpha1.json
+apiVersion: volsync.backube/v1alpha1
+kind: ReplicationSource
+metadata:
+  name: synapse
+  namespace: communication
+spec:
+  sourcePVC: synapse-data
+  trigger:
+    schedule: "0 * * * *"
+  restic:
+    copyMethod: Snapshot
+    pruneIntervalDays: 7
+    repository: synapse-restic-secret
+    cacheCapacity: 4Gi
+    cacheStorageClassName: longhorn-cache
+    cacheAccessModes: [ReadWriteOnce]
+    volumeSnapshotClassName: longhorn-snapclass
+    storageClassName: longhorn-snapshot
+    accessModes: [ReadWriteOnce]
+    retain:
+      hourly: 24
+      daily: 7
+      weekly: 5
+---
+apiVersion: volsync.backube/v1alpha1
+kind: ReplicationDestination
+metadata:
+  name: "synapse-data-dst"
+spec:
+  trigger:
+    manual: restore-once
+  restic:
+    repository: synapse-restic-secret
+    copyMethod: Snapshot # must be Snapshot
+    cacheCapacity: 4Gi
+    cacheStorageClassName: longhorn-cache
+    cacheAccessModes: [ReadWriteOnce]
+    volumeSnapshotClassName: longhorn-snapclass
+    storageClassName: longhorn-snapshot
+    accessModes: [ReadWriteOnce]
+    capacity: 20Gi
+---
+# yaml-language-server: $schema=https://raw.githubusercontent.com/yannh/kubernetes-json-schema/master/v1.26.1-standalone-strict/secret-v1.json
+apiVersion: v1
+kind: Secret
+metadata:
+  name: synapse-restic-secret
+  labels:
+    app.kubernetes.io/name: synapse
+type: Opaque
+stringData:
+  RESTIC_REPOSITORY: ${SECRET_RESTIC_REPOSITORY_S3}/synapse
+  RESTIC_PASSWORD: ${SECRET_RESTIC_PASSWORD_S3}
+  AWS_ACCESS_KEY_ID: ${SECRET_MINIO_ACCESS_KEY}
+  AWS_SECRET_ACCESS_KEY: ${SECRET_MINIO_SECRET_KEY}
