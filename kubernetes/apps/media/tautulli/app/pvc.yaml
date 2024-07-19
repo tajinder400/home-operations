@@ -1,0 +1,16 @@
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: tautulli-config
+  namespace: media
+spec:
+  accessModes: ["ReadWriteOnce"]
+  storageClassName: longhorn
+  dataSourceRef:
+    kind: ReplicationDestination
+    apiGroup: volsync.backube
+    name: "tautulli-config-dst"
+  resources:
+    requests:
+      storage: 5Gi
