@@ -37,7 +37,7 @@ spec:
     barmanObjectStore:
       wal:
         compression: bzip2
-        maxParallel: 8
+        maxParallel: 4
       destinationPath: s3://cloudnative-pg/
       endpointURL: http://minio.storage.svc.cluster.local:9000
       serverName: postgres-001
@@ -52,7 +52,7 @@ spec:
  #   - name: clusterBackup
  #     barmanObjectStore:
  #       wal:
- #         maxParallel: 8
+ #         maxParallel: 4
  #       destinationPath: s3://cloudnative-pg/
  #       endpointURL: http://minio.storage.svc.cluster.local:9000
  #       serverName: postgres-000
