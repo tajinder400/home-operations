@@ -52,7 +52,7 @@ spec:
               SLSKD_SLSK_LISTEN_PORT: &soulseekPort 50300
               SLSKD_APP_DIR: /config
               SLSKD_REMOTE_CONFIGURATION: true
-              SLSKD_SHARED_DIR: "/media/music,!/media/music/music_sort"
+              SLSKD_SHARED_DIR: /media/music
               SLSKD_NO_AUTH: true
               SLSKD_METRICS: true
               SLSKD_METRICS_NO_AUTH: true
