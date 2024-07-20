@@ -110,13 +110,13 @@ spec:
     persistence:
       config:
         existingClaim: slskd-config
-      music_complete:
+      music-complete:
         type: nfs
         server: 10.0.10.18
         path: /mnt/mechonis/data/media/music
         globalMounts:
           - path: /media/music
-      music_incomplete:
+      music-incomplete:
         type: nfs
         server: 10.0.10.18
         path: /mnt/bionis/slskd_incomplete
