@@ -95,7 +95,7 @@ spec:
                   port: http
     persistence:
       config:
-        existingClaim: sabnzbd-config
+        existingClaim: sabnzbd
         globalMounts:
           - path: /config
       downloads:
