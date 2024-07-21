@@ -6,8 +6,8 @@ metadata:
   name: "${APP}-volsync"
 spec:
   secretStoreRef:
-    name: onepassword-connect
     kind: ClusterSecretStore
+    name: oracle-vault
   target:
     name: "${APP}-volsync-secret"
     template:
