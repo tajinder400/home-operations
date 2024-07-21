@@ -95,7 +95,7 @@ spec:
                   port: http
     persistence:
       config:
-        existingClaim: tautulli-config
+        existingClaim: tautulli
       cache:
         existingClaim: tautulli-cache
         globalMounts:

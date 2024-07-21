@@ -93,7 +93,7 @@ spec:
                   port: http
     persistence:
       config:
-        existingClaim: sonarr-config
+        existingClaim: sonarr
       media:
         type: nfs
         server: 10.0.10.18
