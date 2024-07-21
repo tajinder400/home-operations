@@ -109,7 +109,7 @@ spec:
                   port: http
     persistence:
       config:
-        existingClaim: slskd-config
+        existingClaim: slskd
       music-complete:
         type: nfs
         server: 10.0.10.18
