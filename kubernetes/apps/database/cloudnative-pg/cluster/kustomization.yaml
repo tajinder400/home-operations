@@ -6,4 +6,3 @@ resources:
   - ./cluster16.yaml
   - ./service.yaml
   - ./scheduledbackup.yaml
-  #- ./clustersecret.sops.yaml
