@@ -96,6 +96,6 @@ spec:
                   port: http
     persistence:
       config:
-        existingClaim: vaultwarden-config
+        existingClaim: vaultwarden
         globalMounts:
           - path: /data
