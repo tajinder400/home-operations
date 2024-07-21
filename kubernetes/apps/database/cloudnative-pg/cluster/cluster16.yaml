@@ -43,10 +43,10 @@ spec:
       serverName: postgres-001
       s3Credentials:
         accessKeyId:
-          name: cluster-secret
+          name: cloudnative-pg-secret
           key: AWS_ACCESS_KEY_ID
         secretAccessKey:
-          name: cluster-secret
+          name: cloudnative-pg-secret
           key: AWS_SECRET_ACCESS_KEY
  # externalClusters:
  #   - name: clusterBackup
@@ -58,8 +58,8 @@ spec:
  #       serverName: postgres-000
  #       s3Credentials:
  #         accessKeyId:
- #           name: cluster-secret
+ #           name: cloudnative-pg-secret
  #           key: AWS_ACCESS_KEY_ID
  #         secretAccessKey:
- #           name: cluster-secret
+ #           name: cloudnative-pg-secret
  #           key: AWS_SECRET_ACCESS_KEY
