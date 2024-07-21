@@ -7,3 +7,4 @@ resources:
   #- ./volsync-config.yaml
   #- ./pvc.yaml
   - ./externalsecret.yaml
+  - ../../../../templates/volsync
