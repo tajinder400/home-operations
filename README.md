@@ -21,7 +21,7 @@ _... managed with Flux, Renovate, and GitHub Actions_ 🤖
 ## 💻 Nodes
 | Node                          | Hostname        | RAM  | Storage                                            | Function         | Operating System |
 |-------------------------------|-----------------|------|----------------------------------------------------|------------------|------------------|
-| Lenovo ThinkCentre M9720Q     | Logos           | 16GB | 512GB SSD                                          | Control Plane    | Talos Linux      |
+| Lenovo ThinkCentre M720Q      | Logos           | 16GB | 512GB SSD                                          | Control Plane    | Talos Linux      |
 | KVM                           | Pneuma          | 16GB | 512GB SSD                                          | Control Plane    | Talos Linux      |
 | Beelink EQ12                  | Ontos           | 16GB | 512GB SSD                                          | Control Plane    | Talos Linux      |
 
