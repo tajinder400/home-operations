@@ -40,7 +40,7 @@ spec:
         maxParallel: 4
       destinationPath: s3://cloudnative-pg/
       endpointURL: http://minio.storage.svc.cluster.local:9000
-      serverName: postgres-001
+      serverName: postgres-002
       s3Credentials:
         accessKeyId:
           name: cloudnative-pg-secret
@@ -48,18 +48,21 @@ spec:
         secretAccessKey:
           name: cloudnative-pg-secret
           key: AWS_SECRET_ACCESS_KEY
- # externalClusters:
- #   - name: clusterBackup
- #     barmanObjectStore:
- #       wal:
- #         maxParallel: 4
- #       destinationPath: s3://cloudnative-pg/
- #       endpointURL: http://minio.storage.svc.cluster.local:9000
- #       serverName: postgres-000
- #       s3Credentials:
- #         accessKeyId:
- #           name: cloudnative-pg-secret
- #           key: AWS_ACCESS_KEY_ID
- #         secretAccessKey:
- #           name: cloudnative-pg-secret
- #           key: AWS_SECRET_ACCESS_KEY
+  bootstrap:
+    recovery:
+      source: postgres-001
+  externalClusters:
+    - name: clusterBackup
+      barmanObjectStore:
+        wal:
+          maxParallel: 4
+        destinationPath: s3://cloudnative-pg/
+        endpointURL: http://minio.storage.svc.cluster.local:9000
+        serverName: postgres-001
+        s3Credentials:
+          accessKeyId:
+            name: cloudnative-pg-secret
+            key: AWS_ACCESS_KEY_ID
+          secretAccessKey:
+            name: cloudnative-pg-secret
+            key: AWS_SECRET_ACCESS_KEY
