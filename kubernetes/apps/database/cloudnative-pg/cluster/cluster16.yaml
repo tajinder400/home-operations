@@ -12,7 +12,7 @@ spec:
     size: 20Gi
     storageClass: openebs-hostpath
   superuserSecret:
-    name: cloudnative-pg
+    name: cloudnative-pg-secret
   enableSuperuserAccess: true
   postgresql:
     parameters:
@@ -34,13 +34,15 @@ spec:
       - { regex: cluster, action: labeldrop }
   backup:
     retentionPolicy: 30d
-    barmanObjectStore:
+    barmanObjectStore: &barmanObjectStore
+      data:
+        compression: bzip2
       wal:
         compression: bzip2
         maxParallel: 4
       destinationPath: s3://cloudnative-pg/
       endpointURL: http://minio.storage.svc.cluster.local:9000
-      serverName: postgres-002
+      serverName: &currentCluster postgres-002
       s3Credentials:
         accessKeyId:
           name: cloudnative-pg-secret
@@ -50,19 +52,9 @@ spec:
           key: AWS_SECRET_ACCESS_KEY
   bootstrap:
     recovery:
-      source: postgres-001
+      source: &previousCluster postgres-001
   externalClusters:
-    - name: clusterBackup
+    - name: *previousCluster
       barmanObjectStore:
-        wal:
-          maxParallel: 4
-        destinationPath: s3://cloudnative-pg/
-        endpointURL: http://minio.storage.svc.cluster.local:9000
-        serverName: postgres-001
-        s3Credentials:
-          accessKeyId:
-            name: cloudnative-pg-secret
-            key: AWS_ACCESS_KEY_ID
-          secretAccessKey:
-            name: cloudnative-pg-secret
-            key: AWS_SECRET_ACCESS_KEY
+        <<: *barmanObjectStore
+        serverName: *previousCluster
