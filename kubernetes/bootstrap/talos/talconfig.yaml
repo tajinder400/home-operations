@@ -22,16 +22,16 @@ cniConfig:
 
 nodes:
   - hostname: "pneuma"
-    ipAddress: "10.0.10.45"
-    installDisk: "/dev/vda"
-    talosImageURL: factory.talos.dev/installer/beb531140193c1f2ebe805d80c4aa56c65ec2afc002c4fa8a1e03e22c7c23f22
+    ipAddress: "10.0.10.52"
+    installDisk: "/dev/nvme0n1"
+    talosImageURL: factory.talos.dev/installer/8e5cf1ac0e1e639be5b84a29d7c0c3f67715a5a809082895c505d0d7d136a208
     controlPlane: true
     networkInterfaces:
       - deviceSelector:
-          hardwareAddr: "52:54:00:bb:a0:20"
+          hardwareAddr: "98:fa:9b:89:fe:68"
         dhcp: false
         addresses:
-          - "10.0.10.45/24"
+          - "10.0.10.52/24"
         routes:
           - network: 0.0.0.0/0
             gateway: "10.0.10.1"
