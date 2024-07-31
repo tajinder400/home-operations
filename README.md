@@ -22,7 +22,7 @@ _... managed with Flux, Renovate, and GitHub Actions_ 🤖
 | Node                          | Hostname        | RAM  | Storage                                            | Function         | Operating System |
 |-------------------------------|-----------------|------|----------------------------------------------------|------------------|------------------|
 | Lenovo ThinkCentre M720Q      | Logos           | 16GB | 512GB SSD                                          | Control Plane    | Talos Linux      |
-| KVM                           | Pneuma          | 16GB | 512GB SSD                                          | Control Plane    | Talos Linux      |
+| Lenovo ThinkCentre M720Q      | Pneuma          | 16GB | 512GB SSD                                          | Control Plane    | Talos Linux      |
 | Beelink EQ12                  | Ontos           | 16GB | 512GB SSD                                          | Control Plane    | Talos Linux      |
 
 
@@ -42,7 +42,6 @@ _... managed with Flux, Renovate, and GitHub Actions_ 🤖
 | Ubiquiti | Unifi U7 Pro                 | Main access point for the house                                   |
 | Raspberry| Pi4                          | PiHole & Unbound dedicated device. Will probably decomission      |
 
-All nodes are connected to a dual-stack network, with private IPv4 and public IPv6.
 Kubernetes nodes are on their own VLAN which has access to the NAS.
 
 ## ☁️ Cloud Dependencies
