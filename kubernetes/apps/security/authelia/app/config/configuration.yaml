@@ -103,6 +103,14 @@ identity_providers:
         scopes: ["openid", "profile", "email"]
         redirect_uris: ["https://synapse.${SECRET_DOMAIN}/_synapse/client/oidc/callback"]
         userinfo_signed_response_alg: none
+      - client_name: Grafana
+        client_id: grafana
+        client_secret: "${GRAFANA_OAUTH_CLIENT_SECRET}"
+        public: false
+        authorization_policy: two_factor
+        scopes: ["openid", "profile", "groups", "email"]
+        redirect_uris:
+          - https://grafana.${SECRET_DOMAIN}/login/generic_oauth
       #- id: minio
       #  description: MinIO
       #  secret: "${MINIO_OAUTH_CLIENT_SECRET}"
