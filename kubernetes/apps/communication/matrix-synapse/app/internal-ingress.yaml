@@ -29,22 +29,8 @@ spec:
               service:
                 name: matrix-synapse-media-repository
                 port:
-                  number: 8083
+                  number: 8085
             path: /_matrix/media/.*
-            pathType: ImplementationSpecific
-          - backend:
-              service:
-                name: matrix-synapse-media-repository
-                port:
-                  number: 8083
-            path: /_matrix/client/v1/media/.*
-            pathType: ImplementationSpecific
-          - backend:
-              service:
-                name: matrix-synapse-media-repository
-                port:
-                  number: 8083
-            path: /_matrix/federation/v1/media/.*
             pathType: ImplementationSpecific
           - backend:
               service:
@@ -67,63 +53,49 @@ spec:
               service:
                 name: matrix-synapse-media-repository
                 port:
-                  number: 8083
+                  number: 8085
             path: /_matrix/media/.*
             pathType: ImplementationSpecific
           - backend:
               service:
                 name: matrix-synapse-media-repository
                 port:
-                  number: 8083
-            path: /_matrix/client/v1/media/.*
-            pathType: ImplementationSpecific
-          - backend:
-              service:
-                name: matrix-synapse-media-repository
-                port:
-                  number: 8083
-            path: /_matrix/federation/v1/media/.*
-            pathType: ImplementationSpecific
-          - backend:
-              service:
-                name: matrix-synapse-media-repository
-                port:
-                  number: 8083
+                  number: 8085
             path: /_synapse/admin/v1/purge_media_cache$
             pathType: ImplementationSpecific
           - backend:
               service:
                 name: matrix-synapse-media-repository
                 port:
-                  number: 8083
+                  number: 8085
             path: /_synapse/admin/v1/room/.*/media
             pathType: ImplementationSpecific
           - backend:
               service:
                 name: matrix-synapse-media-repository
                 port:
-                  number: 8083
+                  number: 8085
             path: /_synapse/admin/v1/user/.*/media
             pathType: ImplementationSpecific
           - backend:
               service:
                 name: matrix-synapse-media-repository
                 port:
-                  number: 8083
+                  number: 8085
             path: /_synapse/admin/v1/media/
             pathType: ImplementationSpecific
           - backend:
               service:
                 name: matrix-synapse-media-repository
                 port:
-                  number: 8083
+                  number: 8085
             path: /_synapse/admin/v1/quarantine_media/
             pathType: ImplementationSpecific
           - backend:
               service:
                 name: matrix-synapse-media-repository
                 port:
-                  number: 8083
+                  number: 8085
             path: /_synapse/admin/v1/users/.*/media$
             pathType: ImplementationSpecific
           - backend:
