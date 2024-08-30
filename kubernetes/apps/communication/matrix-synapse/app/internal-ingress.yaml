@@ -25,6 +25,13 @@ spec:
     - host: m.${SECRET_DOMAIN}
       http:
         paths:
+          #- backend:
+          #    service:
+          #      name: matrix-synapse-media-repository
+          #      port:
+          #        number: 8083
+          #  path: /_matrix/media/.*
+          #  pathType: ImplementationSpecific
           - backend:
               service:
                 name: matrix-synapse
@@ -42,6 +49,55 @@ spec:
     - host: synapse.${SECRET_DOMAIN}
       http:
         paths:
+          #- backend:
+          #    service:
+          #      name: matrix-synapse-media-repository
+          #      port:
+          #        number: 8083
+          #  path: /_matrix/media/.*
+          #  pathType: ImplementationSpecific
+          #- backend:
+          #    service:
+          #      name: matrix-synapse-media-repository
+          #      port:
+          #        number: 8083
+          #  path: /_synapse/admin/v1/purge_media_cache$
+          #  pathType: ImplementationSpecific
+          #- backend:
+          #    service:
+          #      name: matrix-synapse-media-repository
+          #      port:
+          #        number: 8083
+          #  path: /_synapse/admin/v1/room/.*/media
+          #  pathType: ImplementationSpecific
+          #- backend:
+          #    service:
+          #      name: matrix-synapse-media-repository
+          #      port:
+          #        number: 8083
+           # path: /_synapse/admin/v1/user/.*/media
+           # pathType: ImplementationSpecific
+          #- backend:
+           #   service:
+           #     name: matrix-synapse-media-repository
+           #     port:
+           #       number: 8083
+           # path: /_synapse/admin/v1/media/
+           # pathType: ImplementationSpecific
+          #- backend:
+          #    service:
+          #      name: matrix-synapse-media-repository
+          #      port:
+          #        number: 8083
+          #  path: /_synapse/admin/v1/quarantine_media/
+          #  pathType: ImplementationSpecific
+          #- backend:
+          #    service:
+          #      name: matrix-synapse-media-repository
+          #      port:
+          #        number: 8083
+          #  path: /_synapse/admin/v1/users/.*/media$
+          #  pathType: ImplementationSpecific
           - backend:
               service:
                 name: matrix-synapse-synchrotron
