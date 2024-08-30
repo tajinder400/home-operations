@@ -30,7 +30,7 @@ spec:
                 name: matrix-synapse-media-repository
                 port:
                   number: 8083
-            path: /_matrix/client/v1/media/.*
+            path: /_matrix/media/.*
             pathType: ImplementationSpecific
           - backend:
               service:
@@ -54,7 +54,7 @@ spec:
                 name: matrix-synapse-media-repository
                 port:
                   number: 8083
-            path: /_matrix/client/v1/media/.*
+            path: /_matrix/media/.*
             pathType: ImplementationSpecific
           - backend:
               service:
@@ -125,6 +125,19 @@ spec:
                 port:
                   number: 8083
             path: /_matrix/client/(api/v1|r0|v3)/rooms/[^/]+/initialSync$
+            #New Media Ingress
+          - backend:
+              service:
+                name: matrix-synapse-synchrotron
+                port:
+                  number: 8083
+            path: /_matrix/client/v1/media/.*
+          - backend:
+              service:
+                name: matrix-synapse-synchrotron
+                port:
+                  number: 8083
+            path: /_matrix/federation/v1/media/.*
             pathType: ImplementationSpecific
           - backend:
               service:
@@ -140,8 +153,8 @@ spec:
                   number: 8008
             path: /_synapse
             pathType: Prefix
-  tls:
-    - hosts:
-        - m.${SECRET_DOMAIN}
-        - synapse.${SECRET_DOMAIN}
-      secretName: matrix-tls
+  #tls:
+  #  - hosts:
+  #      - m.${SECRET_DOMAIN}
+  #      - synapse.${SECRET_DOMAIN}
+  #    secretName: wabbit-life-production
