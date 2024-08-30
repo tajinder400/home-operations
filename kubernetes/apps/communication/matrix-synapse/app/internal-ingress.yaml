@@ -30,7 +30,7 @@ spec:
                 name: matrix-synapse-media-repository
                 port:
                   number: 8083
-            path: /_matrix/media/.*
+            path: /_matrix/client/v1/media/.*
             pathType: ImplementationSpecific
           - backend:
               service:
@@ -54,7 +54,7 @@ spec:
                 name: matrix-synapse-media-repository
                 port:
                   number: 8083
-            path: /_matrix/media/.*
+            path: /_matrix/client/v1/media/.*
             pathType: ImplementationSpecific
           - backend:
               service:
