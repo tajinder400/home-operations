@@ -38,7 +38,7 @@ spec:
       #      cpu: 400m # 0.4 of core
             memory: 512Mi
       media_repository:
-        enabled: true
+        enabled: false
         strategy:
           type: Recreate
       federation_sender:
