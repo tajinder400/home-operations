@@ -4,7 +4,6 @@ metadata:
   annotations:
     cert-manager.io/cluster-issuer: letsencrypt-production
     external-dns-cf/is-dns-public: "true"
-    external-dns-cf/is-public: "true"
     external-dns.target/enabled: "true"
     meta.helm.sh/release-name: matrix-synapse
     meta.helm.sh/release-namespace: communication
@@ -27,9 +26,9 @@ spec:
         paths:
           - backend:
               service:
-                name: matrix-synapse-media-repository
+                name: matrix-synapse
                 port:
-                  number: 8083
+                  number: 8008
             path: /_matrix/media/.*
             pathType: ImplementationSpecific
           - backend:
@@ -51,51 +50,51 @@ spec:
         paths:
           - backend:
               service:
-                name: matrix-synapse-media-repository
+                name: matrix-synapse
                 port:
-                  number: 8083
+                  number: 8008
             path: /_matrix/media/.*
             pathType: ImplementationSpecific
           - backend:
               service:
-                name: matrix-synapse-media-repository
+                name: matrix-synapse
                 port:
-                  number: 8083
+                  number: 8008
             path: /_synapse/admin/v1/purge_media_cache$
             pathType: ImplementationSpecific
           - backend:
               service:
-                name: matrix-synapse-media-repository
+                name: matrix-synapse
                 port:
-                  number: 8083
+                  number: 8008
             path: /_synapse/admin/v1/room/.*/media
             pathType: ImplementationSpecific
           - backend:
               service:
-                name: matrix-synapse-media-repository
+                name: matrix-synapse
                 port:
-                  number: 8083
+                  number: 8008
             path: /_synapse/admin/v1/user/.*/media
             pathType: ImplementationSpecific
           - backend:
               service:
-                name: matrix-synapse-media-repository
+                name: matrix-synapse
                 port:
-                  number: 8083
+                  number: 8008
             path: /_synapse/admin/v1/media/
             pathType: ImplementationSpecific
           - backend:
               service:
-                name: matrix-synapse-media-repository
+                name: matrix-synapse
                 port:
-                  number: 8083
+                  number: 8008
             path: /_synapse/admin/v1/quarantine_media/
             pathType: ImplementationSpecific
           - backend:
               service:
-                name: matrix-synapse-media-repository
+                name: matrix-synapse
                 port:
-                  number: 8083
+                  number: 8008
             path: /_synapse/admin/v1/users/.*/media$
             pathType: ImplementationSpecific
           - backend:
@@ -140,8 +139,8 @@ spec:
                   number: 8008
             path: /_synapse
             pathType: Prefix
-  #tls:
-  #  - hosts:
-  #      - m.${SECRET_DOMAIN}
-  #      - synapse.${SECRET_DOMAIN}
-  #    secretName: wabbit-life-production
+  tls:
+    - hosts:
+        - m.${SECRET_DOMAIN}
+        - synapse.${SECRET_DOMAIN}
+      secretName: wabbit-life-production
