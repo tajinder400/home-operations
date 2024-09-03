@@ -3,39 +3,44 @@
 apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
-  name: plex-auto-languages
+  name: &app plex-auto-languages
 spec:
+  interval: 30m
   chart:
     spec:
       chart: app-template
       version: 3.4.0
-      interval: 30m
       sourceRef:
         kind: HelmRepository
         name: bjw-s
         namespace: flux-system
-  interval: 30m
+  install:
+    remediation:
+      retries: 3
+  upgrade:
+    cleanupOnFail: true
+    remediation:
+      strategy: rollback
+      retries: 3
   values:
     controllers:
       plex-auto-languages:
         annotations:
           reloader.stakater.com/auto: "true"
-
         pod:
           securityContext:
             runAsUser: 1001
             runAsGroup: 1001
             fsGroup: 1001
             fsGroupChangePolicy: "OnRootMismatch"
-
         containers:
           app:
             image:
-              repository: docker.io/remirigal/plex-auto-languages
+              repository: remirigal/plex-auto-languages
               tag: v1.2.3
             env:
-              PLEX_URL: http://plex.media.svc.cluster.local:32400
-              REFRESH_LIBRARY_ON_SCAN: false
+              TZ: Europe/London
+              PLEX_URL: "http://plex.media.svc.cluster.local:32400"
             envFrom:
               - secretRef:
                   name: plex-auto-languages-secret
@@ -52,11 +57,3 @@ spec:
                 memory: 128Mi
               limits:
                 memory: 128Mi
-
-    persistence:
-      config:
-        type: emptyDir
-      local:
-        type: emptyDir
-        globalMounts:
-          - path: /.local
