@@ -38,7 +38,7 @@ spec:
               REFRESH_LIBRARY_ON_SCAN: false
             envFrom:
               - secretRef:
-                  name: plex-secret
+                  name: plex-auto-languages-secret
             probes:
               liveness:
                 enabled: false
