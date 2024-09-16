@@ -24,3 +24,4 @@ resources:
   - ./ananace-charts.yaml
   - ./external-secrets.yaml
   - ./grafana.yaml
+  - ./fairwinds.yaml

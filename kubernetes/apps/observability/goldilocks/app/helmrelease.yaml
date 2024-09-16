@@ -1,0 +1,50 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: &app goldilocks
+spec:
+  interval: 15m
+  chart:
+    spec:
+      interval: 15m
+      chart: goldilocks
+      version: 9.0.0
+      sourceRef:
+        kind: HelmRepository
+        name: fairwinds
+        namespace: flux-system
+  install:
+    remediation:
+      retries: 5
+  upgrade:
+    remediation:
+      retries: 5
+  values:
+    controller:
+      resources:
+        requests:
+          memory: 105M
+        limits:
+          memory: 105M
+    image:
+      repository: us-docker.pkg.dev/fairwinds-ops/oss/goldilocks
+      tag: v4.13.0@sha256:28d33623c6374047c4df1a2c85f6738fe56047e7b2015d1bb244ab3656dd4006
+      pullPolicy: Always
+    dashboard:
+      replicaCount: 1
+      ingress:
+        enabled: true
+        className: internal
+        annotations:
+          external-dns.alpha.kubernetes.io/target: internal.${SECRET_DOMAIN}
+        hosts:
+          - host: &host "goldilocks.${SECRET_DOMAIN}"
+            paths:
+              - path: /
+                type: Prefix
+      resources:
+        requests:
+          memory: 105M
+        limits:
+          memory: 105M
