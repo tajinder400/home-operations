@@ -6,7 +6,8 @@
     ":disableRateLimiting",
     ":dependencyDashboard",
     ":semanticCommits",
-    ":automergeBranch"
+    ":automergeBranch",
+    "github>tajinder400/home-operations//.github/renovate/packageRules.json5"
   ],
   "dependencyDashboard": true,
   "dependencyDashboardTitle": "Renovate Dashboard 🤖",
