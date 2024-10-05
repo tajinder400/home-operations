@@ -48,12 +48,40 @@
       "matchPackagePatterns": ["ghcr.io/bjw-s", "ghcr.io/onedr0p"]
     },
     {
-      "description": ["Auto merge Github Actions"],
-      "matchManagers": ["github-actions"],
+      "matchDatasources": ["docker"],
       "automerge": true,
       "automergeType": "branch",
       "ignoreTests": true,
-      "matchUpdateTypes": ["minor", "patch"]
+      "matchUpdateTypes": ["minor","patch", "digest"]
+    },
+    {
+      "matchDatasources": ["helm"],
+      "automerge": true,
+      "automergeType": "branch",
+      "ignoreTests": true,
+      "matchUpdateTypes": ["minor"],
+      "matchPackageNames": [
+        "kube-prometheus-stack",
+        "renovate",
+        "node-feature-discovery",
+        "reloader",
+        "snapshot-controller"
+      ]
+    },
+   {
+      "matchDatasources": ["helm"],
+      "automerge": true,
+      "automergeType": "branch",
+      "ignoreTests": true,
+      "matchUpdateTypes": ["patch"]
+   },
+    {
+      "matchDatasources": ["helm"],
+      "automerge": false,
+      "automergeType": "branch",
+      "ignoreTests": true,
+      "matchUpdateTypes": ["patch"],
+      "matchPackageNames": [ "cilium"]
     },
     //Custom Versioning
     {
