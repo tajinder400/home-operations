@@ -15,5 +15,5 @@ resources:
   - ./plex/ks.yaml
   - ./tautulli/ks.yaml
   #- ./paperless/ks.yaml
-  #- ./filebrowser/ks.yaml
+  - ./filebrowser/ks.yaml
 

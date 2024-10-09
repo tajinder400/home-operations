@@ -61,6 +61,11 @@ spec:
               PAPERLESS_URL: https://paperless.${SECRET_DOMAIN}
               USERMAP_UID: "1004"
               USERMAP_GID: "1004"
+              # Configure folders
+              PAPERLESS_CONSUMPTION_DIR: /bionis/paperless/consume
+              PAPERLESS_DATA_DIR: /mechonis/paperless/data
+              PAPERLESS_EXPORT_DIR: /bionis/paperless/export
+              PAPERLESS_MEDIA_ROOT: /mechonis/paperless/media
             envFrom: *envFrom
             resources:
               requests:
@@ -91,27 +96,13 @@ spec:
         enabled: true
         type: nfs
         server: 10.0.10.18
-        path: /mnt/mechonis/data/paperless/data
+        path: /mnt/mechonis/data/paperless
         globalMounts:
-          - path: /usr/src/paperless/data
-      media:
+          - path: /mechonis/paperless
+      bionis:
         enabled: true
         type: nfs
         server: 10.0.10.18
-        path: /mnt/mechonis/data/paperless/media
+        path: /mnt/bionis/paperless
         globalMounts:
-          - path: /usr/src/paperless/media
-      consume:
-        enabled: true
-        type: nfs
-        server: 10.0.10.18
-        path: /mnt/bionis/paperless/watch
-        globalMounts:
-          - path: /usr/src/paperless/consume
-      export:
-        enabled: true
-        type: nfs
-        server: 10.0.10.18
-        path: /mnt/bionis/paperless/export
-        globalMounts:
-          - path: /usr/src/paperless/export
+          - path: /bionis/paperless
