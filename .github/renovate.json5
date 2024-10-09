@@ -13,8 +13,7 @@
   "suppressNotifications": ["prEditedNotification", "prIgnoreNotification"],
   "rebaseWhen": "conflicted",
   "timezone": "Europe/London",
-  "schedule": ["after 4am",
-               "before 7am"],
+  "schedule": ["after 4am and before 5am every day"],
   "ignorePaths": ["**/*.sops.*"],
   "flux": {
     "fileMatch": ["(^|/)kubernetes/.+\\.ya?ml(?:\\.j2)?$"]
