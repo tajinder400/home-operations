@@ -1,0 +1,121 @@
+---
+# yaml-language-server: $schema=https://raw.githubusercontent.com/bjw-s/helm-charts/main/charts/other/app-template/schemas/helmrelease-helm-v2.schema.json
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: &app paperless
+spec:
+  interval: 30m
+  chart:
+    spec:
+      chart: app-template
+      version: 3.5.1
+      sourceRef:
+        kind: HelmRepository
+        name: bjw-s
+        namespace: flux-system
+  maxHistory: 2
+  install:
+    remediation:
+      retries: 3
+  upgrade:
+    cleanupOnFail: true
+    remediation:
+      strategy: rollback
+      retries: 3
+  uninstall:
+    keepHistory: false
+  values:
+    controllers:
+      paperless:
+        strategy: RollingUpdate
+        annotations:
+          reloader.stakater.com/auto: "true"
+        initContainers:
+          init-db:
+            image:
+              repository: ghcr.io/onedr0p/postgres-init
+              tag: 16
+            envFrom: &envFrom
+              - secretRef:
+                  name: paperless-secret
+        pod:
+          securityContext:
+            runAsNonRoot: true
+            runAsUser: 1004
+            runAsGroup: 1004
+            fsGroup: 1004
+        containers:
+          app:
+            image:
+              repository: ghcr.io/paperless-ngx/paperless-ngx
+              tag: 2.12.1@sha256:217cec76128c2545872cf356694f2ffd4524cb84892d0333e654795dec255633
+            env:
+              COMPOSE_PROJECT_NAME: paperless
+              PAPERLESS_CONSUMER_POLLING: "60"
+              PAPERLESS_CONSUMER_RECURSIVE: "true"
+              PAPERLESS_CONSUMER_SUBDIRS_AS_TAGS: "true"
+              PAPERLESS_ENABLE_HTTP_REMOTE_USER: "true"
+              PAPERLESS_HTTP_REMOTE_USER_HEADER_NAME: HTTP_X_AUTH_REQUEST_EMAIL
+              PAPERLESS_OCR_LANGUAGES: eng
+              PAPERLESS_OCR_LANGUAGE: eng
+              PAPERLESS_PORT: 8000
+              PAPERLESS_DBNAME: paperless
+              PAPERLESS_REDIS: redis://dragonfly.database.svc.cluster.local.:6379
+              PAPERLESS_TASK_WORKERS: 2
+              PAPERLESS_TIME_ZONE: Europe/London
+              PAPERLESS_URL: https://paperless.${SECRET_EXTERNAL_DOMAIN}
+            envFrom: *envFrom
+            resources:
+              requests:
+                cpu: 25m
+                memory: 1Gi
+              limits:
+                memory: 1Gi
+    service:
+      app:
+        controller: *app
+        ports:
+          http:
+            port: 8000
+    ingress:
+      app:
+        className: internal
+        annotations:
+          external-dns.alpha.kubernetes.io/target: internal.${SECRET_DOMAIN}
+        hosts:
+          - host: &host "{{ .Release.Name }}.${SECRET_DOMAIN}"
+            paths:
+              - path: /
+                service:
+                  identifier: app
+                  port: http
+    persistence:
+      data:
+        enabled: true
+        type: nfs
+        server: 10.0.10.18
+        path: /mnt/mechonis/data/paperless/paperless/data
+        globalMounts:
+          - path: /usr/src/paperless/data
+      media:
+        enabled: true
+        type: nfs
+        server: 10.0.10.18
+        path: /mnt/mechonis/data/paperless/media
+        globalMounts:
+          - path: /usr/src/paperless/media
+      consume:
+        enabled: true
+        type: nfs
+        server: 10.0.10.18
+        path: /mnt/bionis/paperless/watch
+        globalMounts:
+          - path: /usr/src/paperless/consume
+      export:
+        enabled: true
+        type: nfs
+        server: 10.0.10.18
+        path: /mnt/bionis/paperless/export
+        globalMounts:
+          - path: /usr/src/paperless/export
