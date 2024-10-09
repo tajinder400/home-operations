@@ -93,7 +93,7 @@ spec:
                   port: http
     persistence:
       data:
-        existingClaim: paperless-data
+        existingClaim: paperless
         globalMounts:
           - path: /data/local
       bionis:
