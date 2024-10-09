@@ -26,13 +26,6 @@ spec:
   uninstall:
     keepHistory: false
   values:
-    defaultPodOptions:
-      automountServiceAccountToken: false
-      securityContext:
-        runAsUser: 1004
-        runAsGroup: 1004
-        fsGroup: 1001
-        fsGroupChangePolicy: OnRootMismatch
     controllers:
       paperless:
         strategy: RollingUpdate
