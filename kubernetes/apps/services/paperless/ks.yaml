@@ -6,11 +6,11 @@ metadata:
   name: &app paperless
   namespace: flux-system
 spec:
-  targetNamespace: media
+  targetNamespace: services
   commonMetadata:
     labels:
       app.kubernetes.io/name: *app
-  path: ./kubernetes/apps/media/paperless/app
+  path: ./kubernetes/apps/services/paperless/app
   prune: true
   sourceRef:
     kind: GitRepository
