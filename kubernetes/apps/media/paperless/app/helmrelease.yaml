@@ -95,7 +95,7 @@ spec:
         enabled: true
         type: nfs
         server: 10.0.10.18
-        path: /mnt/mechonis/data/paperless/paperless/data
+        path: /mnt/mechonis/data/paperless/data
         globalMounts:
           - path: /usr/src/paperless/data
       media:
