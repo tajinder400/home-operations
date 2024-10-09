@@ -65,6 +65,8 @@ spec:
               PAPERLESS_TASK_WORKERS: 2
               PAPERLESS_TIME_ZONE: Europe/London
               PAPERLESS_URL: https://paperless.${SECRET_EXTERNAL_DOMAIN}
+              USERMAP_UID: "1004"
+              USERMAP_GID: "1004"
             envFrom: *envFrom
             resources:
               requests:
