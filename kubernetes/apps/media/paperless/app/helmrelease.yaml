@@ -70,6 +70,7 @@ spec:
               PAPERLESS_URL: https://paperless.${SECRET_DOMAIN}
               USERMAP_UID: "1004"
               USERMAP_GID: "1004"
+              PAPERLESS_OCR_USER_ARGS: '{"invalidate_digital_signatures": true}'
               # Configure folders
               PAPERLESS_CONSUMPTION_DIR: /bionis/paperless/consume
               PAPERLESS_DATA_DIR: /mechonis/paperless/data
