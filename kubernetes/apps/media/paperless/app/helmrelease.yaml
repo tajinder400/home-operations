@@ -55,7 +55,7 @@ spec:
               PAPERLESS_OCR_LANGUAGE: eng
               PAPERLESS_PORT: 8000
               PAPERLESS_DBNAME: paperless
-              PAPERLESS_REDIS: redis://dragonfly.database.svc.cluster.local.:6379
+              PAPERLESS_REDIS: redis://dragonfly.database.svc.cluster.local.:6379/3
               PAPERLESS_TASK_WORKERS: 2
               PAPERLESS_TIME_ZONE: Europe/London
               PAPERLESS_URL: https://paperless.${SECRET_DOMAIN}
@@ -63,9 +63,9 @@ spec:
               USERMAP_GID: "1004"
               # Configure folders
               PAPERLESS_CONSUMPTION_DIR: /bionis/paperless/consume
-              PAPERLESS_DATA_DIR: /mechonis/paperless/data
+              PAPERLESS_DATA_DIR: /data/local/data
               PAPERLESS_EXPORT_DIR: /bionis/paperless/export
-              PAPERLESS_MEDIA_ROOT: /mechonis/paperless/media
+              PAPERLESS_MEDIA_ROOT: /data/local/media
             envFrom: *envFrom
             resources:
               requests:
@@ -93,12 +93,9 @@ spec:
                   port: http
     persistence:
       data:
-        enabled: true
-        type: nfs
-        server: 10.0.10.18
-        path: /mnt/mechonis/data/paperless
+        existingClaim: paperless-data
         globalMounts:
-          - path: /mechonis/paperless
+          - path: /data/local
       bionis:
         enabled: true
         type: nfs
