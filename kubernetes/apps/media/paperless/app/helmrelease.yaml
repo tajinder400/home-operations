@@ -33,7 +33,6 @@ spec:
           reloader.stakater.com/auto: "true"
         pod:
           securityContext:
-            runAsUser: 1004
             runAsGroup: 1004
             fsGroup: 1004
         initContainers:
