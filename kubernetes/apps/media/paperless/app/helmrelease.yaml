@@ -26,17 +26,20 @@ spec:
   uninstall:
     keepHistory: false
   values:
+    defaultPodOptions:
+      automountServiceAccountToken: false
+      securityContext:
+        runAsNonRoot: false
+        runAsUser: 0
+        runAsGroup: 1004
+        fsGroup: 1004
+        supplementalGroups: [65534]
+        fsGroupChangePolicy: "OnRootMismatch"
     controllers:
       paperless:
         strategy: RollingUpdate
         annotations:
           reloader.stakater.com/auto: "true"
-        pod:
-          securityContext:
-            supplementalGroups:
-              - 65542
-              - 568
-              - 1004
         initContainers:
           init-db:
             image:
