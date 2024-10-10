@@ -57,3 +57,11 @@ spec:
                 memory: 128Mi
               limits:
                 memory: 128Mi
+    persistence:
+      config:
+        enabled: true
+        type: emptyDir
+      local:
+        type: emptyDir
+        globalMounts:
+          - path: /.local
