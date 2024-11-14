@@ -19,18 +19,18 @@ _... managed with Flux, Renovate, and GitHub Actions_ 🤖
 
 
 ## 💻 Nodes
-| Node                          | Hostname        | RAM  | Storage                                            | Function         | Operating System |
-|-------------------------------|-----------------|------|----------------------------------------------------|------------------|------------------|
-| Lenovo ThinkCentre M720Q      | Logos           | 16GB | 512GB SSD                                          | Control Plane    | Talos Linux      |
-| Lenovo ThinkCentre M720Q      | Pneuma          | 16GB | 512GB SSD                                          | Control Plane    | Talos Linux      |
-| Beelink EQ12                  | Ontos           | 16GB | 512GB SSD                                          | Control Plane    | Talos Linux      |
+| Node                          | Hostname        | RAM  | Storage               | Networking                  | Function         | Operating System |
+|-------------------------------|-----------------|------|-----------------------|-----------------------------|------------------|------------------|
+| Lenovo ThinkCentre M720Q      | Logos           | 64GB | 512GB SSD             | 10GbE X710-DA2              | Control Plane    | Talos Linux      |
+| Lenovo ThinkCentre M720Q      | Pneuma          | 64GB | 512GB SSD             | 10GbE x710-DA2              | Control Plane    | Talos Linux      |
+| Beelink EQ12                  | Ontos           | 16GB | 512GB SSD             | 2x 2.5Gb 802.3ad Bond       | Control Plane    | Talos Linux      |
 
 
 ## Storage
-| Node                          | Hostname        | RAM  | Storage                                                 | Function         | Operating System |
-|-------------------------------|-----------------|------|---------------------------------------------------------|------------------|------------------|
-| DIY                           | Aionios         | 16GB | 3 x 20TB CRM HDD ZFS Array, RAIDZ1, 2TB SSD, 512GB NVME | Storage NAS      | Ubuntu Server    |
-|                               |                 |      |                                                         |                  |                  |
+| Node                          | Hostname        | RAM  | Storage                                                 | Networking       |Function         | Operating System |
+|-------------------------------|-----------------|------|---------------------------------------------------------|------------------|-----------------|------------------|
+| DIY                           | Aionios         | 16GB | 3 x 20TB CRM HDD ZFS Array, RAIDZ1, 2TB SSD, 512GB NVME |10GbE X710-DA2    |Storage NAS      | Ubuntu Server    |
+|                               |                 |      |                                                         |                  |                 |                  |
 
 
 ## Network
@@ -40,7 +40,7 @@ _... managed with Flux, Renovate, and GitHub Actions_ 🤖
 | Mikrotik | RB5009                       | Edge Router connected to 1Gb Uplink                               |
 | Mikrotik | CRS309-1G-8S+IN              | Edge Switch, 10Gb SFP+ Ports                                      |
 | Ubiquiti | Unifi U7 Pro                 | Main access point for the house                                   |
-| Raspberry| Pi4                          | PiHole & Unbound dedicated device. Will probably decomission      |
+| Raspberry| Pi4                          | PiHole & Unbound dedicated device / VPN into network              |
 
 Kubernetes nodes are on their own VLAN which has access to the NAS.
 
