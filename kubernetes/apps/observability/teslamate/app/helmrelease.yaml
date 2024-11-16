@@ -53,7 +53,7 @@ spec:
                   name: teslamate-secret
     service:
       main:
-        controller: main
+        controller: *app
         type: ClusterIP
         ports:
           http:
