@@ -278,6 +278,12 @@ spec:
           gnetId: 19105
           revision: 3
           datasource: Prometheus
+      loki:
+        loki-metrics:
+          # renovate: dashboardName="Loki2.0 Global Metrics"
+          gnetId: 13407
+          revision: 1
+          datasource: Prometheus
       teslamate:
         battery-health:
           url: https://raw.githubusercontent.com/teslamate-org/teslamate/master/grafana/dashboards/battery-health.json
