@@ -32,8 +32,5 @@ spec:
         - /dev/nvme0n1
     serviceMonitor:
       enabled: true
-      relabelings:
-        - action: labeldrop
-          regex: (pod)
     prometheusRules:
       enabled: false
