@@ -28,7 +28,7 @@ spec:
     keepHistory: false
   values:
     controllers:
-      main:
+      teslamate:
         annotations:
           reloader.stakater.com/auto: "true"
         initContainers:
