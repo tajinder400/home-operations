@@ -51,25 +51,12 @@ spec:
             envFrom:
               - secretRef:
                   name: teslamate-secret
-            probes:
-              liveness: &probes
-                enabled: true
-                custom: true
-                spec:
-                  httpGet:
-                    path: /ping
-                    port: &port 4000
-                  initialDelaySeconds: 30
-                  periodSeconds: 10
-                  timeoutSeconds: 1
-                  failureThreshold: 3
-              readiness: *probes
     service:
       app:
         controller: *app
         ports:
           http:
-            port: *port
+            port: 4000
     ingress:
       app:
         className: internal
