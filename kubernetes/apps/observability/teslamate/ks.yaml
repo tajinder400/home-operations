@@ -10,7 +10,7 @@ spec:
   commonMetadata:
     labels:
       app.kubernetes.io/name: *app
-  path: ./kubernetes/apps/observability/teslamatet/app
+  path: ./kubernetes/apps/observability/teslamate/app
   sourceRef:
     kind: GitRepository
     name: home-kubernetes
