@@ -76,67 +76,6 @@ spec:
         enabled: true
       auth.anonymous:
         enabled: false
-    dashboardProviders:
-      dashboardproviders.yaml:
-        apiVersion: 1
-        providers:
-          - name: default
-            orgId: 1
-            folder: ""
-            type: file
-            disableDeletion: false
-            editable: true
-            options:
-              path: /var/lib/grafana/dashboards/default-folder
-          - name: flux
-            orgId: 1
-            folder: Flux
-            type: file
-            disableDeletion: false
-            editable: true
-            options:
-              path: /var/lib/grafana/dashboards/flux-folder
-          - name: kubernetes
-            orgId: 1
-            folder: Kubernetes
-            type: file
-            disableDeletion: false
-            editable: true
-            options:
-              path: /var/lib/grafana/dashboards/kubernetes-folder
-          - name: nginx
-            orgId: 1
-            folder: Nginx
-            type: file
-            disableDeletion: false
-            editable: true
-            options:
-              path: /var/lib/grafana/dashboards/nginx-folder
-          - name: prometheus
-            orgId: 1
-            folder: Prometheus
-            type: file
-            disableDeletion: false
-            editable: true
-            options:
-              path: /var/lib/grafana/dashboards/prometheus-folder
-          - name: "teslamate`"
-            orgId: 1
-            folder: "Teslamate"
-            type: file
-            disableDeletion: false
-            editable: true
-            allowUiUpdates: true
-            options:
-              path: /var/lib/grafana/dashboards/teslamate
-          - name: "loki"
-            orgId: 1
-            folder: "Loki"
-            type: file
-            disableDeletion: false
-            editable: true
-            options:
-              path: /var/lib/grafana/dashboards/loki
     datasources:
       datasources.yaml:
         apiVersion: 1
@@ -180,8 +119,23 @@ spec:
             jsonData:
               postgresVersion: 1000
               sslmode: disable
+    dashboardProviders:
+      dashboardproviders.yaml:
+        apiVersion: 1
+        providers:
+          - name: default
+            orgId: 1
+            folder: ""
+            type: file
+            disableDeletion: false
+            editable: true
+            options:
+              path: /var/lib/grafana/dashboards/default
     dashboards:
       default:
+        cert-manager:
+          url: https://raw.githubusercontent.com/monitoring-mixins/website/master/assets/cert-manager/dashboards/cert-manager.json
+          datasource: Prometheus
         cloudflared:
           # renovate: depName="Cloudflare Tunnels (cloudflared)"
           gnetId: 17457
@@ -193,25 +147,8 @@ spec:
           gnetId: 15038
           revision: 3
           datasource: Prometheus
-        node-exporter-full:
-          # renovate: depName="Node Exporter Full"
-          gnetId: 1860
-          revision: 37
-          datasource: Prometheus
-        smart:
-          # renovate: depName="Dashboard for smartctl_exporter"
-          gnetId: 20204
-          revision: 1
-          datasource:
-            - { name: DS_PROMETHEUS, value: Prometheus }
-        cert-manager:
-          url: https://raw.githubusercontent.com/monitoring-mixins/website/master/assets/cert-manager/dashboards/cert-manager.json
-          datasource: Prometheus
         external-secrets:
           url: https://raw.githubusercontent.com/external-secrets/external-secrets/main/docs/snippets/dashboard.json
-          datasource: Prometheus
-        node-feature-discovery:
-          url: https://raw.githubusercontent.com/kubernetes-sigs/node-feature-discovery/master/examples/grafana-dashboard.json
           datasource: Prometheus
         flux-cluster:
           url: https://raw.githubusercontent.com/fluxcd/flux2-monitoring-example/main/monitoring/configs/dashboards/cluster.json
@@ -219,11 +156,10 @@ spec:
         flux-control-plane:
           url: https://raw.githubusercontent.com/fluxcd/flux2-monitoring-example/main/monitoring/configs/dashboards/control-plane.json
           datasource: Prometheus
-      kubernetes:
         kubernetes-api-server:
           # renovate: depName="Kubernetes / System / API Server"
           gnetId: 15761
-          revision: 17
+          revision: 18
           datasource: Prometheus
         kubernetes-coredns:
           # renovate: depName="Kubernetes / System / CoreDNS"
@@ -238,7 +174,7 @@ spec:
         kubernetes-namespaces:
           # renovate: depName="Kubernetes / Views / Namespaces"
           gnetId: 15758
-          revision: 38
+          revision: 40
           datasource: Prometheus
         kubernetes-nodes:
           # renovate: depName="Kubernetes / Views / Nodes"
@@ -254,19 +190,48 @@ spec:
           # renovate: depName="K8s / Storage / Volumes / Cluster"
           gnetId: 11454
           revision: 14
-          datasource: Prometheus
-      nginx:
         nginx:
           url: https://raw.githubusercontent.com/kubernetes/ingress-nginx/master/deploy/grafana/dashboards/nginx.json
           datasource: Prometheus
         nginx-request-handling-performance:
           url: https://raw.githubusercontent.com/kubernetes/ingress-nginx/master/deploy/grafana/dashboards/request-handling-performance.json
           datasource: Prometheus
-      prometheus:
+        node-exporter-full:
+          # renovate: depName="Node Exporter Full"
+          gnetId: 1860
+          revision: 37
+          datasource: Prometheus
+        node-feature-discovery:
+          url: https://raw.githubusercontent.com/kubernetes-sigs/node-feature-discovery/master/examples/grafana-dashboard.json
+          datasource: Prometheus
         prometheus:
           # renovate: depName="Prometheus"
           gnetId: 19105
+          revision: 5
+          datasource: Prometheus
+        smart:
+          # renovate: depName="Dashboard for smartctl_exporter"
+          gnetId: 20204
+          revision: 1
+          datasource:
+            - { name: DS_PROMETHEUS, value: Prometheus }
+        unpackerr:
+          # renovate: depName="Unpackerr"
+          gnetId: 18817
+          revision: 1
+          datasource:
+            - { name: DS_PROMETHEUS, value: Prometheus }
+        volsync:
+          # renovate: depName="VolSync Dashboard"
+          gnetId: 21356
           revision: 3
+          datasource:
+            - { name: DS_PROMETHEUS, value: Prometheus }
+            - { name: VAR_REPLICATIONDESTNAME, value: .*-dst }
+        zfs:
+          # renovate: depName="ZFS"
+          gnetId: 7845
+          revision: 4
           datasource: Prometheus
       teslamate:
         battery-health:
@@ -348,8 +313,8 @@ spec:
     ingress:
       enabled: true
       annotations:
-        external-dns.alpha.kubernetes.io/target: external.${SECRET_DOMAIN}
-      ingressClassName: external
+        external-dns.alpha.kubernetes.io/target: internal.${SECRET_DOMAIN}
+      ingressClassName: internal
       hosts: ["grafana.${SECRET_DOMAIN}"]
     persistence:
       enabled: false
