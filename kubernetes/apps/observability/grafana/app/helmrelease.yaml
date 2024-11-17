@@ -188,20 +188,11 @@ spec:
           revision: 6
           datasource:
             - { name: DS_PROMETHEUS, value: Prometheus }
-        cloudnative-pg:
-          url: https://raw.githubusercontent.com/cloudnative-pg/grafana-dashboards/main/charts/cluster/grafana-dashboard.json
-          datasource: Prometheus
         external-dns:
           # renovate: depName="External-dns"
           gnetId: 15038
           revision: 3
           datasource: Prometheus
-        minio:
-          # renovate: depName="MinIO Dashboard"
-          gnetId: 13502
-          revision: 26
-          datasource:
-            - { name: DS_PROMETHEUS, value: Prometheus }
         node-exporter-full:
           # renovate: depName="Node Exporter Full"
           gnetId: 1860
@@ -222,10 +213,6 @@ spec:
         node-feature-discovery:
           url: https://raw.githubusercontent.com/kubernetes-sigs/node-feature-discovery/master/examples/grafana-dashboard.json
           datasource: Prometheus
-        miniflux:
-          url: https://raw.githubusercontent.com/miniflux/v2/main/contrib/grafana/dashboard.json
-          datasource: Prometheus
-      flux:
         flux-cluster:
           url: https://raw.githubusercontent.com/fluxcd/flux2-monitoring-example/main/monitoring/configs/dashboards/cluster.json
           datasource: Prometheus
@@ -280,12 +267,6 @@ spec:
           # renovate: depName="Prometheus"
           gnetId: 19105
           revision: 3
-          datasource: Prometheus
-      loki:
-        loki-metrics:
-          # renovate: dashboardName="Loki2.0 Global Metrics"
-          gnetId: 13407
-          revision: 1
           datasource: Prometheus
       teslamate:
         battery-health:
