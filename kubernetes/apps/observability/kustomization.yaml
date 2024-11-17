@@ -10,4 +10,4 @@ resources:
   - ./promtail/ks.yaml
   - ./smartctl-exporter/ks.yaml
   - ./teslamate/ks.yaml
-  - ./gatus/ks.yaml
+  #- ./gatus/ks.yaml
