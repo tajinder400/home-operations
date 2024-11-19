@@ -47,9 +47,10 @@ spec:
               RADARR__AUTH__REQUIRED: DisabledForLocalAddresses
               RADARR__APP__THEME: dark
               TZ: Europe/London
-           # envFrom:
-           #   - secretRef:
-           #       name: radarr
+              RADARR__UPDATE__BRANCH: develop
+            envFrom: &envFrom
+              - secretRef:
+                  name: radarr-secret
             securityContext:
               allowPrivilegeEscalation: false
               readOnlyRootFilesystem: true
@@ -108,3 +109,11 @@ spec:
           - path: /usenet
       tmp:
          type: emptyDir
+      scripts:
+        type: configMap
+        name: radarr-configmap
+        defaultMode: 0775
+        globalMounts:
+          - path: /scripts/pushover-notify.sh
+            subPath: pushover-notify.sh
+            readOnly: true
