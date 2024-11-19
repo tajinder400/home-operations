@@ -6,6 +6,7 @@ resources:
   - ./helmrelease.yaml
   - ../../../../templates/volsync
   - ../../../../templates/gatus/guarded
+  - ./externalsecret.yaml
 configMapGenerator:
   - name: radarr-configmap
     files:
