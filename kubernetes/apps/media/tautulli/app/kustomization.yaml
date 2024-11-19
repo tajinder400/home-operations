@@ -6,3 +6,4 @@ resources:
   - ./helmrelease.yaml
   - ./pvc-cache.yaml
   - ../../../../templates/volsync
+  - ../../../../templates/gatus/guarded
