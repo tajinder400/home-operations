@@ -5,3 +5,4 @@ resources:
   - ./matrix-signing-key.sops.yaml
   - ./internal-ingress.yaml
   - ../../../../templates/volsync
+  - ../../../../templates/gatus/external
