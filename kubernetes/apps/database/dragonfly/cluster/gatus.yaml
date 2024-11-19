@@ -10,7 +10,7 @@ data:
     endpoints:
       - name: dragonfly
         group: infrastructure
-        url: tcp://dragonfly.database.svc.cluster.local:8081
+        url: tcp://dragonfly.database.svc.cluster.local:8080
         interval: 1m
         ui:
           hide-url: true
