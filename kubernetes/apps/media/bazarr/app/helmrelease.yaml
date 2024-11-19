@@ -99,3 +99,9 @@ spec:
           - path: /data
       tmp:
          type: emptyDir
+      scripts:
+        type: configMap
+        name: bazarr-scripts
+        defaultMode: 0775
+        globalMounts:
+          - readOnly: true
