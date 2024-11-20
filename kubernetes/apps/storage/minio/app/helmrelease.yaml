@@ -113,7 +113,7 @@ spec:
     persistence:
       config:
         type: nfs
-        server: 10.0.10.18
+        server: aionios.internal
         path: /mnt/bionis/minio
         globalMounts:
           - path: /data
