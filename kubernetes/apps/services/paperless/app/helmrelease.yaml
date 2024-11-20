@@ -105,14 +105,14 @@ spec:
       mechonis:
         enabled: true
         type: nfs
-        server: 10.0.10.18
+        server: aionios.internal
         path: /mnt/mechonis/data/paperless
         globalMounts:
           - path: /mechonis/paperless
       bionis:
         enabled: true
         type: nfs
-        server: 10.0.10.18
+        server: aionios.internal
         path: /mnt/bionis/paperless
         globalMounts:
           - path: /bionis/paperless
