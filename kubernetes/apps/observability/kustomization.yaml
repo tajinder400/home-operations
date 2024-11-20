@@ -11,3 +11,4 @@ resources:
   - ./smartctl-exporter/ks.yaml
   - ./teslamate/ks.yaml
   - ./gatus/ks.yaml
+  - ./blackbox-exporter/ks.yaml
