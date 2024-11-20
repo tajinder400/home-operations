@@ -125,21 +125,21 @@ spec:
         type: emptyDir
       tv:
         type: nfs
-        server: 10.0.10.18
+        server: aionios.internal
         path: /mnt/mechonis/data/media/tv
         globalMounts:
           - path: /tv
             readOnly: true
       movie:
         type: nfs
-        server: 10.0.10.18
+        server: aionios.internal
         path: /mnt/mechonis/data/media/movies
         globalMounts:
           - path: /movies
             readOnly: true
       music:
         type: nfs
-        server: 10.0.10.18
+        server: aionios.internal
         path: /mnt/mechonis/data/media/music
         globalMounts:
           - path: /music
