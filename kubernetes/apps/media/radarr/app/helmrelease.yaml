@@ -97,13 +97,13 @@ spec:
         existingClaim: radarr
       media:
         type: nfs
-        server: aionios.internal
+        server: 10.0.10.18
         path: /mnt/mechonis/data
         globalMounts:
           - path: /data
       downloads:
         type: nfs
-        server: aionios.internal
+        server: 10.0.10.18
         path: /mnt/bionis/usenet
         globalMounts:
           - path: /usenet
