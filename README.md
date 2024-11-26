@@ -29,7 +29,7 @@ _... managed with Flux, Renovate, and GitHub Actions_ 🤖
 ## Storage
 | Node                          | Hostname        | RAM  | Storage                                                 | Networking       |Function         | Operating System |
 |-------------------------------|-----------------|------|---------------------------------------------------------|------------------|-----------------|------------------|
-| DIY                           | Aionios         | 16GB | 3 x 20TB CRM HDD ZFS Array, RAIDZ1, 2TB SSD, 512GB NVME |10GbE X710-DA2    |Storage NAS      | Ubuntu Server    |
+| DIY                           | Aionios         | 32GB | 3 x 20TB CRM HDD ZFS Array, RAIDZ1, 2TB SSD, 512GB NVME |10GbE X710-DA2    |Storage NAS      | Ubuntu Server    |
 |                               |                 |      |                                                         |                  |                 |                  |
 
 
