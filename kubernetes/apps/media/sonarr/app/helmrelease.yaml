@@ -73,7 +73,7 @@ spec:
               requests:
                 cpu: 10m
               limits:
-                memory: 3Gi
+                memory: 3.5Gi
     service:
       app:
         controller: sonarr
