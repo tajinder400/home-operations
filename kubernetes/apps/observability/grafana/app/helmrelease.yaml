@@ -242,6 +242,10 @@ spec:
           gnetId: 7845
           revision: 4
           datasource: Prometheus
+        nut:
+          gnetId: 14371
+          revision: 1
+          datasource: Prometheus
       teslamate:
         battery-health:
           url: https://raw.githubusercontent.com/teslamate-org/teslamate/master/grafana/dashboards/battery-health.json
