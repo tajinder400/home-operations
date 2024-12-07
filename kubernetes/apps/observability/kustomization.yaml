@@ -12,3 +12,4 @@ resources:
   - ./teslamate/ks.yaml
   - ./gatus/ks.yaml
   - ./blackbox-exporter/ks.yaml
+  - ./nut-exporter/ks.yaml
