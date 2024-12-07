@@ -71,7 +71,7 @@ spec:
         use_pkce: true
       auth.generic_oauth.group_mapping:
         org_id: 1
-        role_attribute_path: contains(groups[*], 'admins') && 'Admin' || 'Organization administrator'
+        role_attribute_path: contains(groups[*], 'admins') && 'Admin' || 'Viewer'
       auth.basic:
         enabled: true
       auth.anonymous:
