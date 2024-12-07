@@ -4,7 +4,7 @@ apiVersion: monitoring.coreos.com/v1
 kind: PrometheusRule
 metadata:
   name: nut-exporter
-  namespace: monitoring
+  namespace: observability
 spec:
   groups:
     - name: nut-exporter
