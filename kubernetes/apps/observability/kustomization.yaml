@@ -13,4 +13,4 @@ resources:
   - ./gatus/ks.yaml
   - ./blackbox-exporter/ks.yaml
   - ./nut-exporter/ks.yaml
-  #- ./kromgo/ks.yaml
+  - ./kromgo/ks.yaml
