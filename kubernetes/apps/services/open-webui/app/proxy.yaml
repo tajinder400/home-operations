@@ -50,4 +50,4 @@ ports:
     port: 3000
 endpoints:
   - addresses:
-      - aionios.inernal
+      - 10.0.10.18
