@@ -19,7 +19,7 @@ spec:
         pathType: Prefix
         backend:
           service:
-            name: arr
+            name: openwebui
             port:
               number: 80
 ---
@@ -41,7 +41,7 @@ metadata:
   name: openwebui # Must be equal to Service name for automatic mapping
   namespace: services
   labels:
-    kubernetes.io/service-name: arr
+    kubernetes.io/service-name: openwebui
 addressType: IPv4
 ports:
   - name: http
