@@ -126,21 +126,21 @@ spec:
       tv:
         type: nfs
         server: aionios.internal
-        path: /mnt/mechonis/data/media/tv
+        path: /var/mechonis/data/media/tv
         globalMounts:
           - path: /tv
             readOnly: true
       movie:
         type: nfs
         server: aionios.internal
-        path: /mnt/mechonis/data/media/movies
+        path: /var/mechonis/data/media/movies
         globalMounts:
           - path: /movies
             readOnly: true
       music:
         type: nfs
         server: aionios.internal
-        path: /mnt/mechonis/data/media/music
+        path: /var/mechonis/data/media/music
         globalMounts:
           - path: /music
             readOnly: true
