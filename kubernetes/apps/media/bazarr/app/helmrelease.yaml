@@ -119,7 +119,7 @@ spec:
       media:
         type: nfs
         server: aionios.internal
-        path: /mnt/mechonis/data
+        path: /var/mechonis/data
         globalMounts:
           - path: /data
       scripts:
