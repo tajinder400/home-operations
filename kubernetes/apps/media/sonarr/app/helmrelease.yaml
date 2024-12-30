@@ -98,13 +98,13 @@ spec:
       media:
         type: nfs
         server: aionios.internal
-        path: /mnt/mechonis/data
+        path: /var/mechonis/data
         globalMounts:
           - path: /data
       downloads:
         type: nfs
         server: aionios.internal
-        path: /mnt/bionis/usenet
+        path: /var/bionis/usenet
         globalMounts:
           - path: /usenet
       tmp:
