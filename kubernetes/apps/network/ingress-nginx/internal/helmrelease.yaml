@@ -47,6 +47,8 @@ spec:
         hsts-max-age: 31449600
         keep-alive-requests: 10000
         keep-alive: 120
+        allow-snippet-annotations: true
+        annotations-risk-level: Critical
         log-format-escape-json: "true"
         log-format-upstream: >
           {"time": "$time_iso8601", "remote_addr": "$proxy_protocol_addr", "x_forwarded_for": "$proxy_add_x_forwarded_for",
