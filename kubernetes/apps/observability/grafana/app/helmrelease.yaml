@@ -220,7 +220,7 @@ spec:
           datasource: Prometheus
         smart:
           # renovate: depName="Dashboard for smartctl_exporter"
-          gnetId: 22381
+          gnetId: 20204
           revision: 1
           datasource:
             - { name: DS_PROMETHEUS, value: Prometheus }
