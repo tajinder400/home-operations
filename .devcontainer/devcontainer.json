@@ -7,5 +7,14 @@
   },
   "postStartCommand": {
     "git": "git config --global --add safe.directory ${containerWorkspaceFolder}"
-  }
+  },
+// Podman below here are all podman settings
+"runArgs": [
+    "--userns=keep-id"
+],
+"containerUser": "vscode",
+"updateRemoteUserUID": true,
+"containerEnv": {
+    "HOME": "/home/vscode"
+}
 }
