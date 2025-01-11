@@ -12,7 +12,7 @@ metadata:
 spec:
   ingressClassName: internal
   rules:
-  - host: "pikvm.${SECRET_DOMAIN}"
+  - host: "llm.${SECRET_DOMAIN}"
     http:
       paths:
       - path: /
@@ -32,8 +32,8 @@ spec:
   ports:
     - port: 80
       protocol: TCP
-      targetPort: 80
-      name: http
+      targetPort: 443
+      name: https
 ---
 apiVersion: discovery.k8s.io/v1
 kind: EndpointSlice
@@ -44,10 +44,10 @@ metadata:
     kubernetes.io/service-name: pikvm
 addressType: IPv4
 ports:
-  - name: http
-    appProtocol: http
+  - name: https
+    appProtocol: https
     protocol: TCP
-    port: 80
+    port: 443
 endpoints:
   - addresses:
       - 192.168.0.26
