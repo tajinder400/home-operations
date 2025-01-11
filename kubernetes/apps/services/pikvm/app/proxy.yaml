@@ -12,7 +12,7 @@ metadata:
 spec:
   ingressClassName: internal
   rules:
-  - host: "llm.${SECRET_DOMAIN}"
+  - host: "pikvm.${SECRET_DOMAIN}"
     http:
       paths:
       - path: /
