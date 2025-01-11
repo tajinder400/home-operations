@@ -8,6 +8,7 @@ spec:
   staticConfigs:
     - targets:
         - aionios.internal:9100
+        - pikvm.internal:9100
   metricsPath: /metrics
   relabelings:
     - action: replace
