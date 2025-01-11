@@ -33,7 +33,7 @@ spec:
     - port: 80
       protocol: TCP
       targetPort: 443
-      name: http
+      name: https
 ---
 apiVersion: discovery.k8s.io/v1
 kind: EndpointSlice
@@ -44,8 +44,8 @@ metadata:
     kubernetes.io/service-name: pikvm
 addressType: IPv4
 ports:
-  - name: http
-    appProtocol: http
+  - name: https
+    appProtocol: https
     protocol: TCP
     port: 443
 endpoints:
