@@ -25,12 +25,12 @@ spec:
   values:
     fullnameOverride: *app
     provider: pihole
-    #env:
-    #  - name: &name EXTERNAL_DNS_PIHOLE_PASSWORD
-    #    valueFrom:
-    #      secretKeyRef:
-    #        name: &secret external-dns-pihole-secret
-    #        key: *name
+    env:
+      - name: &name EXTERNAL_DNS_PIHOLE_PASSWORD
+        valueFrom:
+          secretKeyRef:
+            name: &secret external-dns-pihole-secret
+            key: *name
     podAnnotations:
       secret.reloader.stakater.com/reload: *secret
     extraArgs:
@@ -39,6 +39,7 @@ spec:
       - --ingress-class=internal
     policy: sync
     sources: ["ingress", "service"]
-    domainFilters: ["{SECRET_DOMAIN}"]
+    domainFilters:
+      - "${SECRET_DOMAIN}"
     serviceMonitor:
       enabled: true
