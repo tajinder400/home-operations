@@ -101,7 +101,7 @@ spec:
       downloads:
         type: nfs
         server: aionios.internal
-        path: /mnt/bionis/usenet
+        path: /var/bionis/usenet
         globalMounts:
           - path: /usenet
       tmp:

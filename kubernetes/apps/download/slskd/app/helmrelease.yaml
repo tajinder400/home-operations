@@ -113,12 +113,12 @@ spec:
       music-complete:
         type: nfs
         server: aionios.internal
-        path: /mnt/mechonis/data/media/music
+        path: /var/mechonis/data/media/music
         globalMounts:
           - path: /media/music
       music-incomplete:
         type: nfs
         server: aionios.internal
-        path: /mnt/bionis/slskd_incomplete
+        path: /var/bionis/slskd_incomplete
         globalMounts:
           - path: /media/downloads/slskd/incomplete
